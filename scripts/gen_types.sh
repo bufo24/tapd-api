@@ -13,7 +13,6 @@ TS_PROTO_OPTIONS="\
 
 ./node_modules/.bin/proto-loader-gen-types --includeDirs=./protos ${TS_PROTO_OPTIONS} taprootassets.proto
 ./node_modules/.bin/proto-loader-gen-types --includeDirs=./protos ./protos/assetwalletrpc ${TS_PROTO_OPTIONS} assetwallet.proto
-./node_modules/.bin/proto-loader-gen-types --includeDirs=./protos ./protos/authmailboxrpc ${TS_PROTO_OPTIONS} mailbox.proto
 ./node_modules/.bin/proto-loader-gen-types --includeDirs=./protos ./protos/mintrpc ${TS_PROTO_OPTIONS} mint.proto
 ./node_modules/.bin/proto-loader-gen-types --includeDirs=./protos ./protos/portfoliopilotrpc ${TS_PROTO_OPTIONS} portfolio_pilot.proto
 ./node_modules/.bin/proto-loader-gen-types --includeDirs=./protos ./protos/priceoraclerpc ${TS_PROTO_OPTIONS} price_oracle.proto

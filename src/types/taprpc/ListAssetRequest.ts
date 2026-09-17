@@ -3,7 +3,6 @@
 import type { ScriptKeyPartial as _taprpc_ScriptKeyPartial, ScriptKey as _taprpc_ScriptKey } from '../taprpc/ScriptKey';
 import type { OutPointPartial as _taprpc_OutPointPartial, OutPoint as _taprpc_OutPoint } from '../taprpc/OutPoint';
 import type { ScriptKeyTypeQueryPartial as _taprpc_ScriptKeyTypeQueryPartial, ScriptKeyTypeQuery as _taprpc_ScriptKeyTypeQuery } from '../taprpc/ScriptKeyTypeQuery';
-import type { SortDirectionPartial as _taprpc_SortDirectionPartial, SortDirection as _taprpc_SortDirection } from '../taprpc/SortDirection';
 import type { Long } from '@grpc/proto-loader';
 
 export interface ListAssetRequestPartial {
@@ -17,9 +16,6 @@ export interface ListAssetRequestPartial {
   'scriptKey'?: (_taprpc_ScriptKeyPartial | null);
   'anchorOutpoint'?: (_taprpc_OutPointPartial | null);
   'scriptKeyType'?: (_taprpc_ScriptKeyTypeQueryPartial | null);
-  'offset'?: (number);
-  'limit'?: (number);
-  'direction'?: (_taprpc_SortDirectionPartial);
 }
 
 export interface ListAssetRequest {
@@ -33,7 +29,4 @@ export interface ListAssetRequest {
   'scriptKey': (_taprpc_ScriptKey | null);
   'anchorOutpoint': (_taprpc_OutPoint | null);
   'scriptKeyType': (_taprpc_ScriptKeyTypeQuery | null);
-  'offset': (number);
-  'limit': (number);
-  'direction': (_taprpc_SortDirection);
 }

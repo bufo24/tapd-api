@@ -4,10 +4,8 @@ import type { AssetKeyPartial as _universerpc_AssetKeyPartial, AssetKey as _univ
 
 export interface AssetLeafKeyResponsePartial {
   'assetKeys'?: (_universerpc_AssetKeyPartial)[];
-  'hasMore'?: (boolean);
 }
 
 export interface AssetLeafKeyResponse {
   'assetKeys': (_universerpc_AssetKey)[];
-  'hasMore': (boolean);
 }

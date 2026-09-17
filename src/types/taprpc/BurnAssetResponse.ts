@@ -6,11 +6,9 @@ import type { DecodedProofPartial as _taprpc_DecodedProofPartial, DecodedProof a
 export interface BurnAssetResponsePartial {
   'burnTransfer'?: (_taprpc_AssetTransferPartial | null);
   'burnProof'?: (_taprpc_DecodedProofPartial | null);
-  'burnProofs'?: (_taprpc_DecodedProofPartial)[];
 }
 
 export interface BurnAssetResponse {
   'burnTransfer': (_taprpc_AssetTransfer | null);
   'burnProof': (_taprpc_DecodedProof | null);
-  'burnProofs': (_taprpc_DecodedProof)[];
 }

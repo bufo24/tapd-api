@@ -28,12 +28,9 @@ export interface ProtoGrpcType {
     AssetMeta: MessageTypeDefinition
     AssetMetaType: EnumTypeDefinition
     AssetOutPoint: MessageTypeDefinition
-    AssetSpecifier: MessageTypeDefinition
     AssetTransfer: MessageTypeDefinition
     AssetType: EnumTypeDefinition
     AssetVersion: EnumTypeDefinition
-    BakeMacaroonRequest: MessageTypeDefinition
-    BakeMacaroonResponse: MessageTypeDefinition
     BurnAssetRequest: MessageTypeDefinition
     BurnAssetResponse: MessageTypeDefinition
     ChainHash: MessageTypeDefinition
@@ -48,8 +45,6 @@ export interface ProtoGrpcType {
     ExternalKey: MessageTypeDefinition
     FetchAssetMetaRequest: MessageTypeDefinition
     FetchAssetMetaResponse: MessageTypeDefinition
-    FetchAssetRequest: MessageTypeDefinition
-    FetchAssetResponse: MessageTypeDefinition
     GenesisInfo: MessageTypeDefinition
     GenesisReveal: MessageTypeDefinition
     GetInfoRequest: MessageTypeDefinition
@@ -73,7 +68,6 @@ export interface ProtoGrpcType {
     ListTransfersResponse: MessageTypeDefinition
     ListUtxosRequest: MessageTypeDefinition
     ListUtxosResponse: MessageTypeDefinition
-    MacaroonPermission: MessageTypeDefinition
     ManagedUtxo: MessageTypeDefinition
     NewAddrRequest: MessageTypeDefinition
     OutPoint: MessageTypeDefinition
@@ -95,7 +89,6 @@ export interface ProtoGrpcType {
     SendAssetResponse: MessageTypeDefinition
     SendEvent: MessageTypeDefinition
     SendState: EnumTypeDefinition
-    SortDirection: EnumTypeDefinition
     SplitCommitment: MessageTypeDefinition
     StopRequest: MessageTypeDefinition
     StopResponse: MessageTypeDefinition
@@ -122,7 +115,6 @@ export interface ProtoGrpcType {
     AssetLeafKeyResponse: MessageTypeDefinition
     AssetLeafKeysRequest: MessageTypeDefinition
     AssetLeafResponse: MessageTypeDefinition
-    AssetLeavesRequest: MessageTypeDefinition
     AssetProof: MessageTypeDefinition
     AssetProofResponse: MessageTypeDefinition
     AssetQuerySort: EnumTypeDefinition
@@ -133,8 +125,6 @@ export interface ProtoGrpcType {
     AssetStatsQuery: MessageTypeDefinition
     AssetStatsSnapshot: MessageTypeDefinition
     AssetTypeFilter: EnumTypeDefinition
-    DeleteAssetLeafRequest: MessageTypeDefinition
-    DeleteAssetLeafResponse: MessageTypeDefinition
     DeleteFederationServerRequest: MessageTypeDefinition
     DeleteFederationServerResponse: MessageTypeDefinition
     DeleteRootQuery: MessageTypeDefinition
@@ -169,6 +159,7 @@ export interface ProtoGrpcType {
     QueryRootResponse: MessageTypeDefinition
     SetFederationSyncConfigRequest: MessageTypeDefinition
     SetFederationSyncConfigResponse: MessageTypeDefinition
+    SortDirection: EnumTypeDefinition
     StatsRequest: MessageTypeDefinition
     StatsResponse: MessageTypeDefinition
     SupplyCommitChainData: MessageTypeDefinition

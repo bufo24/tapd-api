@@ -7,15 +7,12 @@ import type { AddFederationServerResponsePartial as _universerpc_AddFederationSe
 import type { AssetLeafKeyResponsePartial as _universerpc_AssetLeafKeyResponsePartial, AssetLeafKeyResponse as _universerpc_AssetLeafKeyResponse } from '../universerpc/AssetLeafKeyResponse';
 import type { AssetLeafKeysRequestPartial as _universerpc_AssetLeafKeysRequestPartial, AssetLeafKeysRequest as _universerpc_AssetLeafKeysRequest } from '../universerpc/AssetLeafKeysRequest';
 import type { AssetLeafResponsePartial as _universerpc_AssetLeafResponsePartial, AssetLeafResponse as _universerpc_AssetLeafResponse } from '../universerpc/AssetLeafResponse';
-import type { AssetLeavesRequestPartial as _universerpc_AssetLeavesRequestPartial, AssetLeavesRequest as _universerpc_AssetLeavesRequest } from '../universerpc/AssetLeavesRequest';
 import type { AssetProofPartial as _universerpc_AssetProofPartial, AssetProof as _universerpc_AssetProof } from '../universerpc/AssetProof';
 import type { AssetProofResponsePartial as _universerpc_AssetProofResponsePartial, AssetProofResponse as _universerpc_AssetProofResponse } from '../universerpc/AssetProofResponse';
 import type { AssetRootQueryPartial as _universerpc_AssetRootQueryPartial, AssetRootQuery as _universerpc_AssetRootQuery } from '../universerpc/AssetRootQuery';
 import type { AssetRootRequestPartial as _universerpc_AssetRootRequestPartial, AssetRootRequest as _universerpc_AssetRootRequest } from '../universerpc/AssetRootRequest';
 import type { AssetRootResponsePartial as _universerpc_AssetRootResponsePartial, AssetRootResponse as _universerpc_AssetRootResponse } from '../universerpc/AssetRootResponse';
 import type { AssetStatsQueryPartial as _universerpc_AssetStatsQueryPartial, AssetStatsQuery as _universerpc_AssetStatsQuery } from '../universerpc/AssetStatsQuery';
-import type { DeleteAssetLeafRequestPartial as _universerpc_DeleteAssetLeafRequestPartial, DeleteAssetLeafRequest as _universerpc_DeleteAssetLeafRequest } from '../universerpc/DeleteAssetLeafRequest';
-import type { DeleteAssetLeafResponsePartial as _universerpc_DeleteAssetLeafResponsePartial, DeleteAssetLeafResponse as _universerpc_DeleteAssetLeafResponse } from '../universerpc/DeleteAssetLeafResponse';
 import type { DeleteFederationServerRequestPartial as _universerpc_DeleteFederationServerRequestPartial, DeleteFederationServerRequest as _universerpc_DeleteFederationServerRequest } from '../universerpc/DeleteFederationServerRequest';
 import type { DeleteFederationServerResponsePartial as _universerpc_DeleteFederationServerResponsePartial, DeleteFederationServerResponse as _universerpc_DeleteFederationServerResponse } from '../universerpc/DeleteFederationServerResponse';
 import type { DeleteRootQueryPartial as _universerpc_DeleteRootQueryPartial, DeleteRootQuery as _universerpc_DeleteRootQuery } from '../universerpc/DeleteRootQuery';
@@ -24,6 +21,7 @@ import type { FetchSupplyCommitRequestPartial as _universerpc_FetchSupplyCommitR
 import type { FetchSupplyCommitResponsePartial as _universerpc_FetchSupplyCommitResponsePartial, FetchSupplyCommitResponse as _universerpc_FetchSupplyCommitResponse } from '../universerpc/FetchSupplyCommitResponse';
 import type { FetchSupplyLeavesRequestPartial as _universerpc_FetchSupplyLeavesRequestPartial, FetchSupplyLeavesRequest as _universerpc_FetchSupplyLeavesRequest } from '../universerpc/FetchSupplyLeavesRequest';
 import type { FetchSupplyLeavesResponsePartial as _universerpc_FetchSupplyLeavesResponsePartial, FetchSupplyLeavesResponse as _universerpc_FetchSupplyLeavesResponse } from '../universerpc/FetchSupplyLeavesResponse';
+import type { IDPartial as _universerpc_IDPartial, ID as _universerpc_ID } from '../universerpc/ID';
 import type { IgnoreAssetOutPointRequestPartial as _universerpc_IgnoreAssetOutPointRequestPartial, IgnoreAssetOutPointRequest as _universerpc_IgnoreAssetOutPointRequest } from '../universerpc/IgnoreAssetOutPointRequest';
 import type { IgnoreAssetOutPointResponsePartial as _universerpc_IgnoreAssetOutPointResponsePartial, IgnoreAssetOutPointResponse as _universerpc_IgnoreAssetOutPointResponse } from '../universerpc/IgnoreAssetOutPointResponse';
 import type { InfoRequestPartial as _universerpc_InfoRequestPartial, InfoRequest as _universerpc_InfoRequest } from '../universerpc/InfoRequest';
@@ -71,14 +69,14 @@ export interface UniverseClient extends grpc.Client {
   assetLeafKeys(argument: _universerpc_AssetLeafKeysRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetLeafKeyResponse>): grpc.ClientUnaryCall;
   assetLeafKeys(argument: _universerpc_AssetLeafKeysRequestPartial, callback: grpc.requestCallback<_universerpc_AssetLeafKeyResponse>): grpc.ClientUnaryCall;
   
-  AssetLeaves(argument: _universerpc_AssetLeavesRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetLeafResponse>): grpc.ClientUnaryCall;
-  AssetLeaves(argument: _universerpc_AssetLeavesRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_AssetLeafResponse>): grpc.ClientUnaryCall;
-  AssetLeaves(argument: _universerpc_AssetLeavesRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetLeafResponse>): grpc.ClientUnaryCall;
-  AssetLeaves(argument: _universerpc_AssetLeavesRequestPartial, callback: grpc.requestCallback<_universerpc_AssetLeafResponse>): grpc.ClientUnaryCall;
-  assetLeaves(argument: _universerpc_AssetLeavesRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetLeafResponse>): grpc.ClientUnaryCall;
-  assetLeaves(argument: _universerpc_AssetLeavesRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_AssetLeafResponse>): grpc.ClientUnaryCall;
-  assetLeaves(argument: _universerpc_AssetLeavesRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetLeafResponse>): grpc.ClientUnaryCall;
-  assetLeaves(argument: _universerpc_AssetLeavesRequestPartial, callback: grpc.requestCallback<_universerpc_AssetLeafResponse>): grpc.ClientUnaryCall;
+  AssetLeaves(argument: _universerpc_IDPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetLeafResponse>): grpc.ClientUnaryCall;
+  AssetLeaves(argument: _universerpc_IDPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_AssetLeafResponse>): grpc.ClientUnaryCall;
+  AssetLeaves(argument: _universerpc_IDPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetLeafResponse>): grpc.ClientUnaryCall;
+  AssetLeaves(argument: _universerpc_IDPartial, callback: grpc.requestCallback<_universerpc_AssetLeafResponse>): grpc.ClientUnaryCall;
+  assetLeaves(argument: _universerpc_IDPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetLeafResponse>): grpc.ClientUnaryCall;
+  assetLeaves(argument: _universerpc_IDPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_AssetLeafResponse>): grpc.ClientUnaryCall;
+  assetLeaves(argument: _universerpc_IDPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetLeafResponse>): grpc.ClientUnaryCall;
+  assetLeaves(argument: _universerpc_IDPartial, callback: grpc.requestCallback<_universerpc_AssetLeafResponse>): grpc.ClientUnaryCall;
   
   AssetRoots(argument: _universerpc_AssetRootRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetRootResponse>): grpc.ClientUnaryCall;
   AssetRoots(argument: _universerpc_AssetRootRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_AssetRootResponse>): grpc.ClientUnaryCall;
@@ -88,15 +86,6 @@ export interface UniverseClient extends grpc.Client {
   assetRoots(argument: _universerpc_AssetRootRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_AssetRootResponse>): grpc.ClientUnaryCall;
   assetRoots(argument: _universerpc_AssetRootRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_AssetRootResponse>): grpc.ClientUnaryCall;
   assetRoots(argument: _universerpc_AssetRootRequestPartial, callback: grpc.requestCallback<_universerpc_AssetRootResponse>): grpc.ClientUnaryCall;
-  
-  DeleteAssetLeaf(argument: _universerpc_DeleteAssetLeafRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_DeleteAssetLeafResponse>): grpc.ClientUnaryCall;
-  DeleteAssetLeaf(argument: _universerpc_DeleteAssetLeafRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_DeleteAssetLeafResponse>): grpc.ClientUnaryCall;
-  DeleteAssetLeaf(argument: _universerpc_DeleteAssetLeafRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_DeleteAssetLeafResponse>): grpc.ClientUnaryCall;
-  DeleteAssetLeaf(argument: _universerpc_DeleteAssetLeafRequestPartial, callback: grpc.requestCallback<_universerpc_DeleteAssetLeafResponse>): grpc.ClientUnaryCall;
-  deleteAssetLeaf(argument: _universerpc_DeleteAssetLeafRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_DeleteAssetLeafResponse>): grpc.ClientUnaryCall;
-  deleteAssetLeaf(argument: _universerpc_DeleteAssetLeafRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_DeleteAssetLeafResponse>): grpc.ClientUnaryCall;
-  deleteAssetLeaf(argument: _universerpc_DeleteAssetLeafRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_DeleteAssetLeafResponse>): grpc.ClientUnaryCall;
-  deleteAssetLeaf(argument: _universerpc_DeleteAssetLeafRequestPartial, callback: grpc.requestCallback<_universerpc_DeleteAssetLeafResponse>): grpc.ClientUnaryCall;
   
   DeleteAssetRoot(argument: _universerpc_DeleteRootQueryPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_universerpc_DeleteRootResponse>): grpc.ClientUnaryCall;
   DeleteAssetRoot(argument: _universerpc_DeleteRootQueryPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_universerpc_DeleteRootResponse>): grpc.ClientUnaryCall;
@@ -285,11 +274,9 @@ export interface UniverseHandlers extends grpc.UntypedServiceImplementation {
   
   AssetLeafKeys: grpc.handleUnaryCall<_universerpc_AssetLeafKeysRequest, _universerpc_AssetLeafKeyResponsePartial>;
   
-  AssetLeaves: grpc.handleUnaryCall<_universerpc_AssetLeavesRequest, _universerpc_AssetLeafResponsePartial>;
+  AssetLeaves: grpc.handleUnaryCall<_universerpc_ID, _universerpc_AssetLeafResponsePartial>;
   
   AssetRoots: grpc.handleUnaryCall<_universerpc_AssetRootRequest, _universerpc_AssetRootResponsePartial>;
-  
-  DeleteAssetLeaf: grpc.handleUnaryCall<_universerpc_DeleteAssetLeafRequest, _universerpc_DeleteAssetLeafResponsePartial>;
   
   DeleteAssetRoot: grpc.handleUnaryCall<_universerpc_DeleteRootQuery, _universerpc_DeleteRootResponsePartial>;
   
@@ -336,9 +323,8 @@ export interface UniverseHandlers extends grpc.UntypedServiceImplementation {
 export interface UniverseDefinition extends grpc.ServiceDefinition {
   AddFederationServer: MethodDefinition<_universerpc_AddFederationServerRequestPartial, _universerpc_AddFederationServerResponsePartial, _universerpc_AddFederationServerRequest, _universerpc_AddFederationServerResponse>
   AssetLeafKeys: MethodDefinition<_universerpc_AssetLeafKeysRequestPartial, _universerpc_AssetLeafKeyResponsePartial, _universerpc_AssetLeafKeysRequest, _universerpc_AssetLeafKeyResponse>
-  AssetLeaves: MethodDefinition<_universerpc_AssetLeavesRequestPartial, _universerpc_AssetLeafResponsePartial, _universerpc_AssetLeavesRequest, _universerpc_AssetLeafResponse>
+  AssetLeaves: MethodDefinition<_universerpc_IDPartial, _universerpc_AssetLeafResponsePartial, _universerpc_ID, _universerpc_AssetLeafResponse>
   AssetRoots: MethodDefinition<_universerpc_AssetRootRequestPartial, _universerpc_AssetRootResponsePartial, _universerpc_AssetRootRequest, _universerpc_AssetRootResponse>
-  DeleteAssetLeaf: MethodDefinition<_universerpc_DeleteAssetLeafRequestPartial, _universerpc_DeleteAssetLeafResponsePartial, _universerpc_DeleteAssetLeafRequest, _universerpc_DeleteAssetLeafResponse>
   DeleteAssetRoot: MethodDefinition<_universerpc_DeleteRootQueryPartial, _universerpc_DeleteRootResponsePartial, _universerpc_DeleteRootQuery, _universerpc_DeleteRootResponse>
   DeleteFederationServer: MethodDefinition<_universerpc_DeleteFederationServerRequestPartial, _universerpc_DeleteFederationServerResponsePartial, _universerpc_DeleteFederationServerRequest, _universerpc_DeleteFederationServerResponse>
   FetchSupplyCommit: MethodDefinition<_universerpc_FetchSupplyCommitRequestPartial, _universerpc_FetchSupplyCommitResponsePartial, _universerpc_FetchSupplyCommitRequest, _universerpc_FetchSupplyCommitResponse>

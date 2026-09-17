@@ -8,15 +8,11 @@ import {
   AddrReceivesResponse,
   BurnAssetRequestPartial,
   BurnAssetResponse,
-  BakeMacaroonRequestPartial,
-  BakeMacaroonResponse,
   DebugLevelRequestPartial,
   DebugLevelResponse,
   DecodeAddrRequestPartial,
   DecodeProofRequestPartial,
   DecodeProofResponse,
-  FetchAssetRequestPartial,
-  FetchAssetResponse,
   GetInfoRequestPartial,
   GetInfoResponse,
   ListAssetRequestPartial,
@@ -84,15 +80,6 @@ export class TaprootAssetsApi {
     request: ListAssetRequestPartial = {}
   ): Promise<ListAssetResponse> {
     return promisify(this.client.ListAssets.bind(this.client))(request);
-  }
-
-  /**
-   * @fetchAsset fetches assets by asset ID or group key with optional filters.
-   */
-  async fetchAsset(
-    request: FetchAssetRequestPartial = {}
-  ): Promise<FetchAssetResponse> {
-    return promisify(this.client.FetchAsset.bind(this.client))(request);
   }
 
   /**
@@ -250,15 +237,6 @@ export class TaprootAssetsApi {
    */
   async getInfo(request: GetInfoRequestPartial = {}): Promise<GetInfoResponse> {
     return promisify(this.client.GetInfo.bind(this.client))(request);
-  }
-
-  /**
-   * @bakeMacaroon creates a macaroon with custom permissions.
-   */
-  async bakeMacaroon(
-    request: BakeMacaroonRequestPartial = {}
-  ): Promise<BakeMacaroonResponse> {
-    return promisify(this.client.BakeMacaroon.bind(this.client))(request);
   }
 
   /**

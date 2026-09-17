@@ -4,7 +4,6 @@ import type { TransferOutputAnchorPartial as _taprpc_TransferOutputAnchorPartial
 import type { OutputTypePartial as _taprpc_OutputTypePartial, OutputType as _taprpc_OutputType } from '../taprpc/OutputType';
 import type { AssetVersionPartial as _taprpc_AssetVersionPartial, AssetVersion as _taprpc_AssetVersion } from '../taprpc/AssetVersion';
 import type { ProofDeliveryStatusPartial as _taprpc_ProofDeliveryStatusPartial, ProofDeliveryStatus as _taprpc_ProofDeliveryStatus } from '../taprpc/ProofDeliveryStatus';
-import type { AssetTypePartial as _taprpc_AssetTypePartial, AssetType as _taprpc_AssetType } from '../taprpc/AssetType';
 import type { Long } from '@grpc/proto-loader';
 
 export interface TransferOutputPartial {
@@ -22,8 +21,6 @@ export interface TransferOutputPartial {
   'assetId'?: (Buffer | Uint8Array | string);
   'proofCourierAddr'?: (string);
   'tapAddr'?: (string);
-  'groupKey'?: (Buffer | Uint8Array | string);
-  'assetType'?: (_taprpc_AssetTypePartial);
 }
 
 export interface TransferOutput {
@@ -41,6 +38,4 @@ export interface TransferOutput {
   'assetId': (Buffer);
   'proofCourierAddr': (string);
   'tapAddr': (string);
-  'groupKey': (Buffer);
-  'assetType': (_taprpc_AssetType);
 }

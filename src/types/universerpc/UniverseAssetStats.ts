@@ -4,10 +4,8 @@ import type { AssetStatsSnapshotPartial as _universerpc_AssetStatsSnapshotPartia
 
 export interface UniverseAssetStatsPartial {
   'assetStats'?: (_universerpc_AssetStatsSnapshotPartial)[];
-  'hasMore'?: (boolean);
 }
 
 export interface UniverseAssetStats {
   'assetStats': (_universerpc_AssetStatsSnapshot)[];
-  'hasMore': (boolean);
 }

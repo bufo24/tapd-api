@@ -1,6 +1,5 @@
 // Original file: protos/assetwalletrpc/assetwallet.proto
 
-import type { TransitionProofVersionPartial as _assetwalletrpc_TransitionProofVersionPartial, TransitionProofVersion as _assetwalletrpc_TransitionProofVersion } from '../assetwalletrpc/TransitionProofVersion';
 import type { Long } from '@grpc/proto-loader';
 
 export interface CommitVirtualPsbtsRequestPartial {
@@ -14,7 +13,6 @@ export interface CommitVirtualPsbtsRequestPartial {
   'customLockId'?: (Buffer | Uint8Array | string);
   'lockExpirationSeconds'?: (number | string | Long);
   'skipFunding'?: (boolean);
-  'transitionProofVersion'?: (_assetwalletrpc_TransitionProofVersionPartial);
   'anchorChangeOutput'?: "existingOutputIndex"|"add";
   'fees'?: "targetConf"|"satPerVbyte";
 }
@@ -30,7 +28,6 @@ export interface CommitVirtualPsbtsRequest {
   'customLockId': (Buffer);
   'lockExpirationSeconds': (string);
   'skipFunding': (boolean);
-  'transitionProofVersion': (_assetwalletrpc_TransitionProofVersion);
   'anchorChangeOutput': "existingOutputIndex"|"add";
   'fees': "targetConf"|"satPerVbyte";
 }
