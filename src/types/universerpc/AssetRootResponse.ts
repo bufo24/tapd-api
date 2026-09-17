@@ -4,8 +4,10 @@ import type { UniverseRootPartial as _universerpc_UniverseRootPartial, UniverseR
 
 export interface AssetRootResponsePartial {
   'universeRoots'?: ({[key: string]: _universerpc_UniverseRootPartial});
+  'hasMore'?: (boolean);
 }
 
 export interface AssetRootResponse {
   'universeRoots': ({[key: string]: _universerpc_UniverseRoot});
+  'hasMore': (boolean);
 }

@@ -7,8 +7,12 @@ import type { CommitVirtualPsbtsRequestPartial as _assetwalletrpc_CommitVirtualP
 import type { CommitVirtualPsbtsResponsePartial as _assetwalletrpc_CommitVirtualPsbtsResponsePartial, CommitVirtualPsbtsResponse as _assetwalletrpc_CommitVirtualPsbtsResponse } from '../assetwalletrpc/CommitVirtualPsbtsResponse';
 import type { DeclareScriptKeyRequestPartial as _assetwalletrpc_DeclareScriptKeyRequestPartial, DeclareScriptKeyRequest as _assetwalletrpc_DeclareScriptKeyRequest } from '../assetwalletrpc/DeclareScriptKeyRequest';
 import type { DeclareScriptKeyResponsePartial as _assetwalletrpc_DeclareScriptKeyResponsePartial, DeclareScriptKeyResponse as _assetwalletrpc_DeclareScriptKeyResponse } from '../assetwalletrpc/DeclareScriptKeyResponse';
+import type { ExportAssetWalletBackupRequestPartial as _assetwalletrpc_ExportAssetWalletBackupRequestPartial, ExportAssetWalletBackupRequest as _assetwalletrpc_ExportAssetWalletBackupRequest } from '../assetwalletrpc/ExportAssetWalletBackupRequest';
+import type { ExportAssetWalletBackupResponsePartial as _assetwalletrpc_ExportAssetWalletBackupResponsePartial, ExportAssetWalletBackupResponse as _assetwalletrpc_ExportAssetWalletBackupResponse } from '../assetwalletrpc/ExportAssetWalletBackupResponse';
 import type { FundVirtualPsbtRequestPartial as _assetwalletrpc_FundVirtualPsbtRequestPartial, FundVirtualPsbtRequest as _assetwalletrpc_FundVirtualPsbtRequest } from '../assetwalletrpc/FundVirtualPsbtRequest';
 import type { FundVirtualPsbtResponsePartial as _assetwalletrpc_FundVirtualPsbtResponsePartial, FundVirtualPsbtResponse as _assetwalletrpc_FundVirtualPsbtResponse } from '../assetwalletrpc/FundVirtualPsbtResponse';
+import type { ImportAssetsFromBackupRequestPartial as _assetwalletrpc_ImportAssetsFromBackupRequestPartial, ImportAssetsFromBackupRequest as _assetwalletrpc_ImportAssetsFromBackupRequest } from '../assetwalletrpc/ImportAssetsFromBackupRequest';
+import type { ImportAssetsFromBackupResponsePartial as _assetwalletrpc_ImportAssetsFromBackupResponsePartial, ImportAssetsFromBackupResponse as _assetwalletrpc_ImportAssetsFromBackupResponse } from '../assetwalletrpc/ImportAssetsFromBackupResponse';
 import type { NextInternalKeyRequestPartial as _assetwalletrpc_NextInternalKeyRequestPartial, NextInternalKeyRequest as _assetwalletrpc_NextInternalKeyRequest } from '../assetwalletrpc/NextInternalKeyRequest';
 import type { NextInternalKeyResponsePartial as _assetwalletrpc_NextInternalKeyResponsePartial, NextInternalKeyResponse as _assetwalletrpc_NextInternalKeyResponse } from '../assetwalletrpc/NextInternalKeyResponse';
 import type { NextScriptKeyRequestPartial as _assetwalletrpc_NextScriptKeyRequestPartial, NextScriptKeyRequest as _assetwalletrpc_NextScriptKeyRequest } from '../assetwalletrpc/NextScriptKeyRequest';
@@ -56,6 +60,15 @@ export interface AssetWalletClient extends grpc.Client {
   declareScriptKey(argument: _assetwalletrpc_DeclareScriptKeyRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_DeclareScriptKeyResponse>): grpc.ClientUnaryCall;
   declareScriptKey(argument: _assetwalletrpc_DeclareScriptKeyRequestPartial, callback: grpc.requestCallback<_assetwalletrpc_DeclareScriptKeyResponse>): grpc.ClientUnaryCall;
   
+  ExportAssetWalletBackup(argument: _assetwalletrpc_ExportAssetWalletBackupRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_ExportAssetWalletBackupResponse>): grpc.ClientUnaryCall;
+  ExportAssetWalletBackup(argument: _assetwalletrpc_ExportAssetWalletBackupRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_assetwalletrpc_ExportAssetWalletBackupResponse>): grpc.ClientUnaryCall;
+  ExportAssetWalletBackup(argument: _assetwalletrpc_ExportAssetWalletBackupRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_ExportAssetWalletBackupResponse>): grpc.ClientUnaryCall;
+  ExportAssetWalletBackup(argument: _assetwalletrpc_ExportAssetWalletBackupRequestPartial, callback: grpc.requestCallback<_assetwalletrpc_ExportAssetWalletBackupResponse>): grpc.ClientUnaryCall;
+  exportAssetWalletBackup(argument: _assetwalletrpc_ExportAssetWalletBackupRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_ExportAssetWalletBackupResponse>): grpc.ClientUnaryCall;
+  exportAssetWalletBackup(argument: _assetwalletrpc_ExportAssetWalletBackupRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_assetwalletrpc_ExportAssetWalletBackupResponse>): grpc.ClientUnaryCall;
+  exportAssetWalletBackup(argument: _assetwalletrpc_ExportAssetWalletBackupRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_ExportAssetWalletBackupResponse>): grpc.ClientUnaryCall;
+  exportAssetWalletBackup(argument: _assetwalletrpc_ExportAssetWalletBackupRequestPartial, callback: grpc.requestCallback<_assetwalletrpc_ExportAssetWalletBackupResponse>): grpc.ClientUnaryCall;
+  
   FundVirtualPsbt(argument: _assetwalletrpc_FundVirtualPsbtRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_FundVirtualPsbtResponse>): grpc.ClientUnaryCall;
   FundVirtualPsbt(argument: _assetwalletrpc_FundVirtualPsbtRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_assetwalletrpc_FundVirtualPsbtResponse>): grpc.ClientUnaryCall;
   FundVirtualPsbt(argument: _assetwalletrpc_FundVirtualPsbtRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_FundVirtualPsbtResponse>): grpc.ClientUnaryCall;
@@ -64,6 +77,15 @@ export interface AssetWalletClient extends grpc.Client {
   fundVirtualPsbt(argument: _assetwalletrpc_FundVirtualPsbtRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_assetwalletrpc_FundVirtualPsbtResponse>): grpc.ClientUnaryCall;
   fundVirtualPsbt(argument: _assetwalletrpc_FundVirtualPsbtRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_FundVirtualPsbtResponse>): grpc.ClientUnaryCall;
   fundVirtualPsbt(argument: _assetwalletrpc_FundVirtualPsbtRequestPartial, callback: grpc.requestCallback<_assetwalletrpc_FundVirtualPsbtResponse>): grpc.ClientUnaryCall;
+  
+  ImportAssetsFromBackup(argument: _assetwalletrpc_ImportAssetsFromBackupRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_ImportAssetsFromBackupResponse>): grpc.ClientUnaryCall;
+  ImportAssetsFromBackup(argument: _assetwalletrpc_ImportAssetsFromBackupRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_assetwalletrpc_ImportAssetsFromBackupResponse>): grpc.ClientUnaryCall;
+  ImportAssetsFromBackup(argument: _assetwalletrpc_ImportAssetsFromBackupRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_ImportAssetsFromBackupResponse>): grpc.ClientUnaryCall;
+  ImportAssetsFromBackup(argument: _assetwalletrpc_ImportAssetsFromBackupRequestPartial, callback: grpc.requestCallback<_assetwalletrpc_ImportAssetsFromBackupResponse>): grpc.ClientUnaryCall;
+  importAssetsFromBackup(argument: _assetwalletrpc_ImportAssetsFromBackupRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_ImportAssetsFromBackupResponse>): grpc.ClientUnaryCall;
+  importAssetsFromBackup(argument: _assetwalletrpc_ImportAssetsFromBackupRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_assetwalletrpc_ImportAssetsFromBackupResponse>): grpc.ClientUnaryCall;
+  importAssetsFromBackup(argument: _assetwalletrpc_ImportAssetsFromBackupRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_ImportAssetsFromBackupResponse>): grpc.ClientUnaryCall;
+  importAssetsFromBackup(argument: _assetwalletrpc_ImportAssetsFromBackupRequestPartial, callback: grpc.requestCallback<_assetwalletrpc_ImportAssetsFromBackupResponse>): grpc.ClientUnaryCall;
   
   NextInternalKey(argument: _assetwalletrpc_NextInternalKeyRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_assetwalletrpc_NextInternalKeyResponse>): grpc.ClientUnaryCall;
   NextInternalKey(argument: _assetwalletrpc_NextInternalKeyRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_assetwalletrpc_NextInternalKeyResponse>): grpc.ClientUnaryCall;
@@ -155,7 +177,11 @@ export interface AssetWalletHandlers extends grpc.UntypedServiceImplementation {
   
   DeclareScriptKey: grpc.handleUnaryCall<_assetwalletrpc_DeclareScriptKeyRequest, _assetwalletrpc_DeclareScriptKeyResponsePartial>;
   
+  ExportAssetWalletBackup: grpc.handleUnaryCall<_assetwalletrpc_ExportAssetWalletBackupRequest, _assetwalletrpc_ExportAssetWalletBackupResponsePartial>;
+  
   FundVirtualPsbt: grpc.handleUnaryCall<_assetwalletrpc_FundVirtualPsbtRequest, _assetwalletrpc_FundVirtualPsbtResponsePartial>;
+  
+  ImportAssetsFromBackup: grpc.handleUnaryCall<_assetwalletrpc_ImportAssetsFromBackupRequest, _assetwalletrpc_ImportAssetsFromBackupResponsePartial>;
   
   NextInternalKey: grpc.handleUnaryCall<_assetwalletrpc_NextInternalKeyRequest, _assetwalletrpc_NextInternalKeyResponsePartial>;
   
@@ -181,7 +207,9 @@ export interface AssetWalletDefinition extends grpc.ServiceDefinition {
   AnchorVirtualPsbts: MethodDefinition<_assetwalletrpc_AnchorVirtualPsbtsRequestPartial, _taprpc_SendAssetResponsePartial, _assetwalletrpc_AnchorVirtualPsbtsRequest, _taprpc_SendAssetResponse>
   CommitVirtualPsbts: MethodDefinition<_assetwalletrpc_CommitVirtualPsbtsRequestPartial, _assetwalletrpc_CommitVirtualPsbtsResponsePartial, _assetwalletrpc_CommitVirtualPsbtsRequest, _assetwalletrpc_CommitVirtualPsbtsResponse>
   DeclareScriptKey: MethodDefinition<_assetwalletrpc_DeclareScriptKeyRequestPartial, _assetwalletrpc_DeclareScriptKeyResponsePartial, _assetwalletrpc_DeclareScriptKeyRequest, _assetwalletrpc_DeclareScriptKeyResponse>
+  ExportAssetWalletBackup: MethodDefinition<_assetwalletrpc_ExportAssetWalletBackupRequestPartial, _assetwalletrpc_ExportAssetWalletBackupResponsePartial, _assetwalletrpc_ExportAssetWalletBackupRequest, _assetwalletrpc_ExportAssetWalletBackupResponse>
   FundVirtualPsbt: MethodDefinition<_assetwalletrpc_FundVirtualPsbtRequestPartial, _assetwalletrpc_FundVirtualPsbtResponsePartial, _assetwalletrpc_FundVirtualPsbtRequest, _assetwalletrpc_FundVirtualPsbtResponse>
+  ImportAssetsFromBackup: MethodDefinition<_assetwalletrpc_ImportAssetsFromBackupRequestPartial, _assetwalletrpc_ImportAssetsFromBackupResponsePartial, _assetwalletrpc_ImportAssetsFromBackupRequest, _assetwalletrpc_ImportAssetsFromBackupResponse>
   NextInternalKey: MethodDefinition<_assetwalletrpc_NextInternalKeyRequestPartial, _assetwalletrpc_NextInternalKeyResponsePartial, _assetwalletrpc_NextInternalKeyRequest, _assetwalletrpc_NextInternalKeyResponse>
   NextScriptKey: MethodDefinition<_assetwalletrpc_NextScriptKeyRequestPartial, _assetwalletrpc_NextScriptKeyResponsePartial, _assetwalletrpc_NextScriptKeyRequest, _assetwalletrpc_NextScriptKeyResponse>
   ProveAssetOwnership: MethodDefinition<_assetwalletrpc_ProveAssetOwnershipRequestPartial, _assetwalletrpc_ProveAssetOwnershipResponsePartial, _assetwalletrpc_ProveAssetOwnershipRequest, _assetwalletrpc_ProveAssetOwnershipResponse>

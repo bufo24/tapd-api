@@ -11,6 +11,8 @@ import {
   AddAssetSellOfferResponse,
   AddAssetSellOrderRequestPartial,
   AddAssetSellOrderResponse,
+  ForwardingHistoryRequestPartial,
+  ForwardingHistoryResponse,
   QueryPeerAcceptedQuotesRequestPartial,
   QueryPeerAcceptedQuotesResponse,
   RfqClient,
@@ -112,5 +114,14 @@ export class RfqApi {
     request: SubscribeRfqEventNtfnsRequestPartial = {}
   ): ClientReadableStream<RfqEvent> {
     return this.client.SubscribeRfqEventNtfns(request);
+  }
+
+  /**
+   * @forwardingHistory queries completed asset forwarding events.
+   */
+  async forwardingHistory(
+    request: ForwardingHistoryRequestPartial = {}
+  ): Promise<ForwardingHistoryResponse> {
+    return promisify(this.client.ForwardingHistory.bind(this.client))(request);
   }
 }

@@ -5,6 +5,8 @@ import type { MethodDefinition } from '@grpc/proto-loader'
 import type { AddrPartial as _taprpc_AddrPartial, Addr as _taprpc_Addr } from '../taprpc/Addr';
 import type { AddrReceivesRequestPartial as _taprpc_AddrReceivesRequestPartial, AddrReceivesRequest as _taprpc_AddrReceivesRequest } from '../taprpc/AddrReceivesRequest';
 import type { AddrReceivesResponsePartial as _taprpc_AddrReceivesResponsePartial, AddrReceivesResponse as _taprpc_AddrReceivesResponse } from '../taprpc/AddrReceivesResponse';
+import type { BakeMacaroonRequestPartial as _taprpc_BakeMacaroonRequestPartial, BakeMacaroonRequest as _taprpc_BakeMacaroonRequest } from '../taprpc/BakeMacaroonRequest';
+import type { BakeMacaroonResponsePartial as _taprpc_BakeMacaroonResponsePartial, BakeMacaroonResponse as _taprpc_BakeMacaroonResponse } from '../taprpc/BakeMacaroonResponse';
 import type { BurnAssetRequestPartial as _taprpc_BurnAssetRequestPartial, BurnAssetRequest as _taprpc_BurnAssetRequest } from '../taprpc/BurnAssetRequest';
 import type { BurnAssetResponsePartial as _taprpc_BurnAssetResponsePartial, BurnAssetResponse as _taprpc_BurnAssetResponse } from '../taprpc/BurnAssetResponse';
 import type { DebugLevelRequestPartial as _taprpc_DebugLevelRequestPartial, DebugLevelRequest as _taprpc_DebugLevelRequest } from '../taprpc/DebugLevelRequest';
@@ -15,6 +17,8 @@ import type { DecodeProofResponsePartial as _taprpc_DecodeProofResponsePartial, 
 import type { ExportProofRequestPartial as _taprpc_ExportProofRequestPartial, ExportProofRequest as _taprpc_ExportProofRequest } from '../taprpc/ExportProofRequest';
 import type { FetchAssetMetaRequestPartial as _taprpc_FetchAssetMetaRequestPartial, FetchAssetMetaRequest as _taprpc_FetchAssetMetaRequest } from '../taprpc/FetchAssetMetaRequest';
 import type { FetchAssetMetaResponsePartial as _taprpc_FetchAssetMetaResponsePartial, FetchAssetMetaResponse as _taprpc_FetchAssetMetaResponse } from '../taprpc/FetchAssetMetaResponse';
+import type { FetchAssetRequestPartial as _taprpc_FetchAssetRequestPartial, FetchAssetRequest as _taprpc_FetchAssetRequest } from '../taprpc/FetchAssetRequest';
+import type { FetchAssetResponsePartial as _taprpc_FetchAssetResponsePartial, FetchAssetResponse as _taprpc_FetchAssetResponse } from '../taprpc/FetchAssetResponse';
 import type { GetInfoRequestPartial as _taprpc_GetInfoRequestPartial, GetInfoRequest as _taprpc_GetInfoRequest } from '../taprpc/GetInfoRequest';
 import type { GetInfoResponsePartial as _taprpc_GetInfoResponsePartial, GetInfoResponse as _taprpc_GetInfoResponse } from '../taprpc/GetInfoResponse';
 import type { ListAssetRequestPartial as _taprpc_ListAssetRequestPartial, ListAssetRequest as _taprpc_ListAssetRequest } from '../taprpc/ListAssetRequest';
@@ -56,6 +60,15 @@ export interface TaprootAssetsClient extends grpc.Client {
   addrReceives(argument: _taprpc_AddrReceivesRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_taprpc_AddrReceivesResponse>): grpc.ClientUnaryCall;
   addrReceives(argument: _taprpc_AddrReceivesRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_AddrReceivesResponse>): grpc.ClientUnaryCall;
   addrReceives(argument: _taprpc_AddrReceivesRequestPartial, callback: grpc.requestCallback<_taprpc_AddrReceivesResponse>): grpc.ClientUnaryCall;
+  
+  BakeMacaroon(argument: _taprpc_BakeMacaroonRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_BakeMacaroonResponse>): grpc.ClientUnaryCall;
+  BakeMacaroon(argument: _taprpc_BakeMacaroonRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_taprpc_BakeMacaroonResponse>): grpc.ClientUnaryCall;
+  BakeMacaroon(argument: _taprpc_BakeMacaroonRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_BakeMacaroonResponse>): grpc.ClientUnaryCall;
+  BakeMacaroon(argument: _taprpc_BakeMacaroonRequestPartial, callback: grpc.requestCallback<_taprpc_BakeMacaroonResponse>): grpc.ClientUnaryCall;
+  bakeMacaroon(argument: _taprpc_BakeMacaroonRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_BakeMacaroonResponse>): grpc.ClientUnaryCall;
+  bakeMacaroon(argument: _taprpc_BakeMacaroonRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_taprpc_BakeMacaroonResponse>): grpc.ClientUnaryCall;
+  bakeMacaroon(argument: _taprpc_BakeMacaroonRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_BakeMacaroonResponse>): grpc.ClientUnaryCall;
+  bakeMacaroon(argument: _taprpc_BakeMacaroonRequestPartial, callback: grpc.requestCallback<_taprpc_BakeMacaroonResponse>): grpc.ClientUnaryCall;
   
   BurnAsset(argument: _taprpc_BurnAssetRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_BurnAssetResponse>): grpc.ClientUnaryCall;
   BurnAsset(argument: _taprpc_BurnAssetRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_taprpc_BurnAssetResponse>): grpc.ClientUnaryCall;
@@ -101,6 +114,15 @@ export interface TaprootAssetsClient extends grpc.Client {
   exportProof(argument: _taprpc_ExportProofRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_taprpc_ProofFile>): grpc.ClientUnaryCall;
   exportProof(argument: _taprpc_ExportProofRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_ProofFile>): grpc.ClientUnaryCall;
   exportProof(argument: _taprpc_ExportProofRequestPartial, callback: grpc.requestCallback<_taprpc_ProofFile>): grpc.ClientUnaryCall;
+  
+  FetchAsset(argument: _taprpc_FetchAssetRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_FetchAssetResponse>): grpc.ClientUnaryCall;
+  FetchAsset(argument: _taprpc_FetchAssetRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_taprpc_FetchAssetResponse>): grpc.ClientUnaryCall;
+  FetchAsset(argument: _taprpc_FetchAssetRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_FetchAssetResponse>): grpc.ClientUnaryCall;
+  FetchAsset(argument: _taprpc_FetchAssetRequestPartial, callback: grpc.requestCallback<_taprpc_FetchAssetResponse>): grpc.ClientUnaryCall;
+  fetchAsset(argument: _taprpc_FetchAssetRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_FetchAssetResponse>): grpc.ClientUnaryCall;
+  fetchAsset(argument: _taprpc_FetchAssetRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_taprpc_FetchAssetResponse>): grpc.ClientUnaryCall;
+  fetchAsset(argument: _taprpc_FetchAssetRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_FetchAssetResponse>): grpc.ClientUnaryCall;
+  fetchAsset(argument: _taprpc_FetchAssetRequestPartial, callback: grpc.requestCallback<_taprpc_FetchAssetResponse>): grpc.ClientUnaryCall;
   
   FetchAssetMeta(argument: _taprpc_FetchAssetMetaRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_taprpc_FetchAssetMetaResponse>): grpc.ClientUnaryCall;
   FetchAssetMeta(argument: _taprpc_FetchAssetMetaRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_taprpc_FetchAssetMetaResponse>): grpc.ClientUnaryCall;
@@ -252,6 +274,8 @@ export interface TaprootAssetsClient extends grpc.Client {
 export interface TaprootAssetsHandlers extends grpc.UntypedServiceImplementation {
   AddrReceives: grpc.handleUnaryCall<_taprpc_AddrReceivesRequest, _taprpc_AddrReceivesResponsePartial>;
   
+  BakeMacaroon: grpc.handleUnaryCall<_taprpc_BakeMacaroonRequest, _taprpc_BakeMacaroonResponsePartial>;
+  
   BurnAsset: grpc.handleUnaryCall<_taprpc_BurnAssetRequest, _taprpc_BurnAssetResponsePartial>;
   
   DebugLevel: grpc.handleUnaryCall<_taprpc_DebugLevelRequest, _taprpc_DebugLevelResponsePartial>;
@@ -261,6 +285,8 @@ export interface TaprootAssetsHandlers extends grpc.UntypedServiceImplementation
   DecodeProof: grpc.handleUnaryCall<_taprpc_DecodeProofRequest, _taprpc_DecodeProofResponsePartial>;
   
   ExportProof: grpc.handleUnaryCall<_taprpc_ExportProofRequest, _taprpc_ProofFilePartial>;
+  
+  FetchAsset: grpc.handleUnaryCall<_taprpc_FetchAssetRequest, _taprpc_FetchAssetResponsePartial>;
   
   FetchAssetMeta: grpc.handleUnaryCall<_taprpc_FetchAssetMetaRequest, _taprpc_FetchAssetMetaResponsePartial>;
   
@@ -300,11 +326,13 @@ export interface TaprootAssetsHandlers extends grpc.UntypedServiceImplementation
 
 export interface TaprootAssetsDefinition extends grpc.ServiceDefinition {
   AddrReceives: MethodDefinition<_taprpc_AddrReceivesRequestPartial, _taprpc_AddrReceivesResponsePartial, _taprpc_AddrReceivesRequest, _taprpc_AddrReceivesResponse>
+  BakeMacaroon: MethodDefinition<_taprpc_BakeMacaroonRequestPartial, _taprpc_BakeMacaroonResponsePartial, _taprpc_BakeMacaroonRequest, _taprpc_BakeMacaroonResponse>
   BurnAsset: MethodDefinition<_taprpc_BurnAssetRequestPartial, _taprpc_BurnAssetResponsePartial, _taprpc_BurnAssetRequest, _taprpc_BurnAssetResponse>
   DebugLevel: MethodDefinition<_taprpc_DebugLevelRequestPartial, _taprpc_DebugLevelResponsePartial, _taprpc_DebugLevelRequest, _taprpc_DebugLevelResponse>
   DecodeAddr: MethodDefinition<_taprpc_DecodeAddrRequestPartial, _taprpc_AddrPartial, _taprpc_DecodeAddrRequest, _taprpc_Addr>
   DecodeProof: MethodDefinition<_taprpc_DecodeProofRequestPartial, _taprpc_DecodeProofResponsePartial, _taprpc_DecodeProofRequest, _taprpc_DecodeProofResponse>
   ExportProof: MethodDefinition<_taprpc_ExportProofRequestPartial, _taprpc_ProofFilePartial, _taprpc_ExportProofRequest, _taprpc_ProofFile>
+  FetchAsset: MethodDefinition<_taprpc_FetchAssetRequestPartial, _taprpc_FetchAssetResponsePartial, _taprpc_FetchAssetRequest, _taprpc_FetchAssetResponse>
   FetchAssetMeta: MethodDefinition<_taprpc_FetchAssetMetaRequestPartial, _taprpc_FetchAssetMetaResponsePartial, _taprpc_FetchAssetMetaRequest, _taprpc_FetchAssetMetaResponse>
   GetInfo: MethodDefinition<_taprpc_GetInfoRequestPartial, _taprpc_GetInfoResponsePartial, _taprpc_GetInfoRequest, _taprpc_GetInfoResponse>
   ListAssets: MethodDefinition<_taprpc_ListAssetRequestPartial, _taprpc_ListAssetResponsePartial, _taprpc_ListAssetRequest, _taprpc_ListAssetResponse>

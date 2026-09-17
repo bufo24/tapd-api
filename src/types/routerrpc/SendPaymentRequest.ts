@@ -12,7 +12,6 @@ export interface SendPaymentRequestPartial {
   'paymentRequest'?: (string);
   'timeoutSeconds'?: (number);
   'feeLimitSat'?: (number | string | Long);
-  'outgoingChanId'?: (number | string | Long);
   'cltvLimit'?: (number);
   'routeHints'?: (_lnrpc_RouteHintPartial)[];
   'destCustomRecords'?: ({[key: number]: Buffer | Uint8Array | string});
@@ -40,7 +39,6 @@ export interface SendPaymentRequest {
   'paymentRequest': (string);
   'timeoutSeconds': (number);
   'feeLimitSat': (string);
-  'outgoingChanId': (string);
   'cltvLimit': (number);
   'routeHints': (_lnrpc_RouteHint)[];
   'destCustomRecords': ({[key: number]: Buffer});

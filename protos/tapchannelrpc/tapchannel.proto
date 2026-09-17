@@ -52,6 +52,58 @@ service TaprootAssetChannels {
     units along side the normal information.
     */
     rpc DecodeAssetPayReq (AssetPayReq) returns (AssetPayReqResponse);
+
+    /* litcli: `ln listinvoices`
+    ListInvoices is a wrapper around lnd's lnrpc.ListInvoices method that only
+    returns invoices that involve at least one Taproot Asset. The full lnd
+    invoice is returned along with the decoded asset amounts that the invoice's
+    HTLCs carry, so that callers don't need to parse the custom channel data
+    themselves. All request fields behave the same way as they do for lnd's
+    lnrpc.ListInvoices RPC method.
+    */
+    rpc ListInvoices (ListInvoicesRequest) returns (ListInvoicesResponse);
+
+    /* litcli: `ln listpayments`
+    ListPayments is a wrapper around lnd's lnrpc.ListPayments method that only
+    returns payments that involve at least one Taproot Asset. The full lnd
+    payment is returned along with the decoded asset amounts that the payment's
+    HTLCs carry, so that callers don't need to parse the custom channel data
+    themselves. All request fields behave the same way as they do for lnd's
+    lnrpc.ListPayments RPC method.
+    */
+    rpc ListPayments (ListPaymentsRequest) returns (ListPaymentsResponse);
+
+    /* litcli: `ln subscribeinvoices`
+    SubscribeInvoices is a wrapper around lnd's lnrpc.SubscribeInvoices method
+    that only streams invoices that involve at least one Taproot Asset. The full
+    lnd invoice is returned along with the decoded asset amounts that the
+    invoice's HTLCs carry, so that callers don't need to parse the custom
+    channel data themselves. All request fields behave the same way as they do
+    for lnd's lnrpc.SubscribeInvoices RPC method.
+    */
+    rpc SubscribeInvoices (SubscribeInvoicesRequest)
+        returns (stream AssetInvoice);
+
+    /* litcli: `ln subscribepayments`
+    SubscribePayments is a wrapper around lnd's routerrpc.TrackPayments method
+    that only streams payment updates that involve at least one Taproot Asset.
+    The full lnd payment is returned along with the decoded asset amounts that
+    the payment's HTLCs carry, so that callers don't need to parse the custom
+    channel data themselves. All request fields behave the same way as they do
+    for lnd's routerrpc.TrackPayments RPC method.
+    */
+    rpc SubscribePayments (SubscribePaymentsRequest)
+        returns (stream AssetPayment);
+
+    /* litcli: `ln trackpayment`
+    TrackPayment is a wrapper around lnd's routerrpc.TrackPaymentV2 method that
+    only streams payment updates that involve at least one Taproot Asset. The
+    full lnd payment is returned along with the decoded asset amounts that the
+    payment's HTLCs carry, so that callers don't need to parse the custom
+    channel data themselves. All request fields behave the same way as they do
+    for lnd's routerrpc.TrackPaymentV2 RPC method.
+    */
+    rpc TrackPayment (TrackPaymentRequest) returns (stream AssetPayment);
 }
 
 message FundChannelRequest {
@@ -251,6 +303,23 @@ message AddInvoiceRequest {
     // This field is optional and can be left empty if no metadata is available.
     // The maximum length of this field is 32'768 bytes.
     string price_oracle_metadata = 7;
+
+    // Reserved: was rfq_id.
+    reserved 8;
+
+    // Optional minimum asset amount the peer must accept.
+    // Forwarded to AddAssetBuyOrder. When omitted, defaults
+    // to the full asset amount (full-fill expected). Set
+    // explicitly to 0 to accept any partial fill.
+    optional uint64 asset_min_amt = 9;
+
+    // Optional rate floor (asset units per BTC) as a
+    // fixed-point number. Forwarded to AddAssetBuyOrder.
+    rfqrpc.FixedPoint asset_rate_limit = 10;
+
+    // Execution policy (IOC default, FOK). Forwarded to
+    // AddAssetBuyOrder.
+    rfqrpc.ExecutionPolicy execution_policy = 11;
 }
 
 message AddInvoiceResponse {
@@ -295,12 +364,127 @@ message AssetPayReqResponse {
     // The group the asset ID belong to, if applicable.
     taprpc.AssetGroup asset_group = 3;
 
-    // Genesis information for the asset ID which includes the meta hash, and
-    // asset ID. This is only set if the payment request was decoded with an
-    // asset ID and not with a group key (since a group can contain assets from
-    // different minting events or genesis infos).
+    // Always populated. For group-key queries, the asset_id reflects the
+    // resolved tranche's genesis ID.
     taprpc.GenesisInfo genesis_info = 4;
 
     // The normal decoded payment request.
     lnrpc.PayReq pay_req = 5;
+}
+
+message AssetAmount {
+    // The asset ID (genesis ID of the tranche) the amount refers to.
+    bytes asset_id = 1;
+
+    // The amount, expressed in units of the asset identified by asset_id.
+    uint64 amount = 2;
+
+    // The tweaked group key the asset belongs to, in compressed form. Empty
+    // for assets that aren't part of a group, or whose group is unknown to
+    // this tapd instance. Populated so callers that work in terms of group
+    // keys (e.g. wallets backing a fungible group of tranches) don't need a
+    // separate lookup per result.
+    bytes group_key = 3;
+}
+
+message ListInvoicesRequest {
+    // The standard lnd invoice listing request. All fields behave the same way
+    // as they do for lnd's lnrpc.ListInvoices RPC method (see the API docs at
+    // https://lightning.engineering/api-docs/api/lnd/lightning/list-invoices
+    // for more details). Pagination is performed by lnd over all invoices; the
+    // returned set is then filtered down to only those that involve assets, so
+    // a page may contain fewer asset invoices than the requested maximum.
+    lnrpc.ListInvoiceRequest request = 1;
+}
+
+message SubscribeInvoicesRequest {
+    // The standard lnd invoice subscription request. All fields behave the same
+    // way as they do for lnd's lnrpc.SubscribeInvoices RPC method (see the API
+    // docs at
+    // https://lightning.engineering/api-docs/api/lnd/lightning/subscribe-invoices
+    // for more details). Invoice index replay is performed by lnd over all
+    // invoices; the returned stream is then filtered down to only those that
+    // involve assets.
+    lnrpc.InvoiceSubscription request = 1;
+}
+
+message AssetInvoice {
+    // The full lnd invoice, including any custom channel data on its HTLCs.
+    lnrpc.Invoice invoice = 1;
+
+    // The asset amounts carried by the invoice's HTLCs, aggregated per asset
+    // ID across all of the invoice's HTLCs. Empty for invoices that have not
+    // been (partially) settled with assets yet.
+    repeated AssetAmount asset_amounts = 2;
+}
+
+message ListInvoicesResponse {
+    // The list of asset invoices that matched the request.
+    repeated AssetInvoice invoices = 1;
+
+    // The index of the last item in the set of returned invoices. This can be
+    // used to seek further, pagination style. Mirrors the value returned by
+    // lnd's lnrpc.ListInvoices.
+    uint64 last_index_offset = 2;
+
+    // The index of the first item in the set of returned invoices. This can be
+    // used to seek backwards, pagination style. Mirrors the value returned by
+    // lnd's lnrpc.ListInvoices.
+    uint64 first_index_offset = 3;
+}
+
+message ListPaymentsRequest {
+    // The standard lnd payment listing request. All fields behave the same way
+    // as they do for lnd's lnrpc.ListPayments RPC method (see the API docs at
+    // https://lightning.engineering/api-docs/api/lnd/lightning/list-payments
+    // for more details). Pagination is performed by lnd over all payments; the
+    // returned set is then filtered down to only those that involve assets, so
+    // a page may contain fewer asset payments than the requested maximum.
+    lnrpc.ListPaymentsRequest request = 1;
+}
+
+message SubscribePaymentsRequest {
+    // The standard lnd payment tracking request. All fields behave the same way
+    // as they do for lnd's routerrpc.TrackPayments RPC method (see the API docs
+    // at https://lightning.engineering/api-docs/api/lnd/router/track-payments
+    // for more details). The payment update stream is produced by lnd over all
+    // active payments; the returned stream is then filtered down to only those
+    // that involve assets.
+    routerrpc.TrackPaymentsRequest request = 1;
+}
+
+message TrackPaymentRequest {
+    // The standard lnd payment tracking request. All fields behave the same way
+    // as they do for lnd's routerrpc.TrackPaymentV2 RPC method (see the API
+    // docs at
+    // https://lightning.engineering/api-docs/api/lnd/router/track-payment-v2
+    // for more details). The payment update stream is produced by lnd for the
+    // requested payment; the returned stream is then filtered down to only
+    // updates that involve assets.
+    routerrpc.TrackPaymentRequest request = 1;
+}
+
+message AssetPayment {
+    // The full lnd payment, including any custom channel data on its HTLCs.
+    lnrpc.Payment payment = 1;
+
+    // The asset amounts carried by the payment, aggregated per asset ID across
+    // all non-failed HTLC attempts. Empty for payments that did not (yet) move
+    // any assets.
+    repeated AssetAmount asset_amounts = 2;
+}
+
+message ListPaymentsResponse {
+    // The list of asset payments that matched the request.
+    repeated AssetPayment payments = 1;
+
+    // The index of the first item in the set of returned payments. This can be
+    // used to seek backwards, pagination style. Mirrors the value returned by
+    // lnd's lnrpc.ListPayments.
+    uint64 first_index_offset = 2;
+
+    // The index of the last item in the set of returned payments. This can be
+    // used to seek further, pagination style. Mirrors the value returned by
+    // lnd's lnrpc.ListPayments.
+    uint64 last_index_offset = 3;
 }

@@ -20,7 +20,11 @@ export interface ProtoGrpcType {
     AddAssetSellOrderResponse: MessageTypeDefinition
     AssetSpec: MessageTypeDefinition
     AssetSpecifier: MessageTypeDefinition
+    ExecutionPolicy: EnumTypeDefinition
     FixedPoint: MessageTypeDefinition
+    ForwardingEvent: MessageTypeDefinition
+    ForwardingHistoryRequest: MessageTypeDefinition
+    ForwardingHistoryResponse: MessageTypeDefinition
     InvalidQuoteResponse: MessageTypeDefinition
     PeerAcceptedBuyQuote: MessageTypeDefinition
     PeerAcceptedBuyQuoteEvent: MessageTypeDefinition
@@ -32,6 +36,7 @@ export interface ProtoGrpcType {
     RejectedQuoteResponse: MessageTypeDefinition
     Rfq: SubtypeConstructor<typeof grpc.Client, _rfqrpc_RfqClient> & { service: _rfqrpc_RfqDefinition }
     RfqEvent: MessageTypeDefinition
+    RfqPolicyType: EnumTypeDefinition
     SubscribeRfqEventNtfnsRequest: MessageTypeDefinition
   }
 }

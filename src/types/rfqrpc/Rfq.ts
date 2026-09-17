@@ -10,6 +10,8 @@ import type { AddAssetSellOfferRequestPartial as _rfqrpc_AddAssetSellOfferReques
 import type { AddAssetSellOfferResponsePartial as _rfqrpc_AddAssetSellOfferResponsePartial, AddAssetSellOfferResponse as _rfqrpc_AddAssetSellOfferResponse } from '../rfqrpc/AddAssetSellOfferResponse';
 import type { AddAssetSellOrderRequestPartial as _rfqrpc_AddAssetSellOrderRequestPartial, AddAssetSellOrderRequest as _rfqrpc_AddAssetSellOrderRequest } from '../rfqrpc/AddAssetSellOrderRequest';
 import type { AddAssetSellOrderResponsePartial as _rfqrpc_AddAssetSellOrderResponsePartial, AddAssetSellOrderResponse as _rfqrpc_AddAssetSellOrderResponse } from '../rfqrpc/AddAssetSellOrderResponse';
+import type { ForwardingHistoryRequestPartial as _rfqrpc_ForwardingHistoryRequestPartial, ForwardingHistoryRequest as _rfqrpc_ForwardingHistoryRequest } from '../rfqrpc/ForwardingHistoryRequest';
+import type { ForwardingHistoryResponsePartial as _rfqrpc_ForwardingHistoryResponsePartial, ForwardingHistoryResponse as _rfqrpc_ForwardingHistoryResponse } from '../rfqrpc/ForwardingHistoryResponse';
 import type { QueryPeerAcceptedQuotesRequestPartial as _rfqrpc_QueryPeerAcceptedQuotesRequestPartial, QueryPeerAcceptedQuotesRequest as _rfqrpc_QueryPeerAcceptedQuotesRequest } from '../rfqrpc/QueryPeerAcceptedQuotesRequest';
 import type { QueryPeerAcceptedQuotesResponsePartial as _rfqrpc_QueryPeerAcceptedQuotesResponsePartial, QueryPeerAcceptedQuotesResponse as _rfqrpc_QueryPeerAcceptedQuotesResponse } from '../rfqrpc/QueryPeerAcceptedQuotesResponse';
 import type { RfqEventPartial as _rfqrpc_RfqEventPartial, RfqEvent as _rfqrpc_RfqEvent } from '../rfqrpc/RfqEvent';
@@ -52,6 +54,15 @@ export interface RfqClient extends grpc.Client {
   addAssetSellOrder(argument: _rfqrpc_AddAssetSellOrderRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_rfqrpc_AddAssetSellOrderResponse>): grpc.ClientUnaryCall;
   addAssetSellOrder(argument: _rfqrpc_AddAssetSellOrderRequestPartial, callback: grpc.requestCallback<_rfqrpc_AddAssetSellOrderResponse>): grpc.ClientUnaryCall;
   
+  ForwardingHistory(argument: _rfqrpc_ForwardingHistoryRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_rfqrpc_ForwardingHistoryResponse>): grpc.ClientUnaryCall;
+  ForwardingHistory(argument: _rfqrpc_ForwardingHistoryRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_rfqrpc_ForwardingHistoryResponse>): grpc.ClientUnaryCall;
+  ForwardingHistory(argument: _rfqrpc_ForwardingHistoryRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_rfqrpc_ForwardingHistoryResponse>): grpc.ClientUnaryCall;
+  ForwardingHistory(argument: _rfqrpc_ForwardingHistoryRequestPartial, callback: grpc.requestCallback<_rfqrpc_ForwardingHistoryResponse>): grpc.ClientUnaryCall;
+  forwardingHistory(argument: _rfqrpc_ForwardingHistoryRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_rfqrpc_ForwardingHistoryResponse>): grpc.ClientUnaryCall;
+  forwardingHistory(argument: _rfqrpc_ForwardingHistoryRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_rfqrpc_ForwardingHistoryResponse>): grpc.ClientUnaryCall;
+  forwardingHistory(argument: _rfqrpc_ForwardingHistoryRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_rfqrpc_ForwardingHistoryResponse>): grpc.ClientUnaryCall;
+  forwardingHistory(argument: _rfqrpc_ForwardingHistoryRequestPartial, callback: grpc.requestCallback<_rfqrpc_ForwardingHistoryResponse>): grpc.ClientUnaryCall;
+  
   QueryPeerAcceptedQuotes(argument: _rfqrpc_QueryPeerAcceptedQuotesRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_rfqrpc_QueryPeerAcceptedQuotesResponse>): grpc.ClientUnaryCall;
   QueryPeerAcceptedQuotes(argument: _rfqrpc_QueryPeerAcceptedQuotesRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_rfqrpc_QueryPeerAcceptedQuotesResponse>): grpc.ClientUnaryCall;
   QueryPeerAcceptedQuotes(argument: _rfqrpc_QueryPeerAcceptedQuotesRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_rfqrpc_QueryPeerAcceptedQuotesResponse>): grpc.ClientUnaryCall;
@@ -77,6 +88,8 @@ export interface RfqHandlers extends grpc.UntypedServiceImplementation {
   
   AddAssetSellOrder: grpc.handleUnaryCall<_rfqrpc_AddAssetSellOrderRequest, _rfqrpc_AddAssetSellOrderResponsePartial>;
   
+  ForwardingHistory: grpc.handleUnaryCall<_rfqrpc_ForwardingHistoryRequest, _rfqrpc_ForwardingHistoryResponsePartial>;
+  
   QueryPeerAcceptedQuotes: grpc.handleUnaryCall<_rfqrpc_QueryPeerAcceptedQuotesRequest, _rfqrpc_QueryPeerAcceptedQuotesResponsePartial>;
   
   SubscribeRfqEventNtfns: grpc.handleServerStreamingCall<_rfqrpc_SubscribeRfqEventNtfnsRequest, _rfqrpc_RfqEventPartial>;
@@ -88,6 +101,7 @@ export interface RfqDefinition extends grpc.ServiceDefinition {
   AddAssetBuyOrder: MethodDefinition<_rfqrpc_AddAssetBuyOrderRequestPartial, _rfqrpc_AddAssetBuyOrderResponsePartial, _rfqrpc_AddAssetBuyOrderRequest, _rfqrpc_AddAssetBuyOrderResponse>
   AddAssetSellOffer: MethodDefinition<_rfqrpc_AddAssetSellOfferRequestPartial, _rfqrpc_AddAssetSellOfferResponsePartial, _rfqrpc_AddAssetSellOfferRequest, _rfqrpc_AddAssetSellOfferResponse>
   AddAssetSellOrder: MethodDefinition<_rfqrpc_AddAssetSellOrderRequestPartial, _rfqrpc_AddAssetSellOrderResponsePartial, _rfqrpc_AddAssetSellOrderRequest, _rfqrpc_AddAssetSellOrderResponse>
+  ForwardingHistory: MethodDefinition<_rfqrpc_ForwardingHistoryRequestPartial, _rfqrpc_ForwardingHistoryResponsePartial, _rfqrpc_ForwardingHistoryRequest, _rfqrpc_ForwardingHistoryResponse>
   QueryPeerAcceptedQuotes: MethodDefinition<_rfqrpc_QueryPeerAcceptedQuotesRequestPartial, _rfqrpc_QueryPeerAcceptedQuotesResponsePartial, _rfqrpc_QueryPeerAcceptedQuotesRequest, _rfqrpc_QueryPeerAcceptedQuotesResponse>
   SubscribeRfqEventNtfns: MethodDefinition<_rfqrpc_SubscribeRfqEventNtfnsRequestPartial, _rfqrpc_RfqEventPartial, _rfqrpc_SubscribeRfqEventNtfnsRequest, _rfqrpc_RfqEvent>
 }

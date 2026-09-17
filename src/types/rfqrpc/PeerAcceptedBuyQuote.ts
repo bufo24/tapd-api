@@ -14,6 +14,7 @@ export interface PeerAcceptedBuyQuotePartial {
   'minTransportableUnits'?: (number | string | Long);
   'priceOracleMetadata'?: (string);
   'assetSpec'?: (_rfqrpc_AssetSpecPartial | null);
+  'acceptedMaxAmount'?: (number | string | Long);
 }
 
 export interface PeerAcceptedBuyQuote {
@@ -26,4 +27,5 @@ export interface PeerAcceptedBuyQuote {
   'minTransportableUnits': (string);
   'priceOracleMetadata': (string);
   'assetSpec': (_rfqrpc_AssetSpec | null);
+  'acceptedMaxAmount': (string);
 }

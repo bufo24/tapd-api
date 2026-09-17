@@ -4,16 +4,25 @@ import { TapdClientOptions } from './';
 import { loadProto } from './proto';
 import {
   AddInvoiceRequestPartial,
+  AssetInvoice,
+  AssetPayment,
   EncodeCustomRecordsRequestPartial,
   EncodeCustomRecordsResponse,
   FundChannelRequestPartial,
   FundChannelResponse,
+  ListInvoicesRequestPartial,
+  ListInvoicesResponse,
+  SubscribeInvoicesRequestPartial,
+  SubscribePaymentsRequestPartial,
   TaprootAssetChannelsClient,
 } from './types';
 import { ProtoGrpcType } from './types/tapchannel';
 import { AddInvoiceResponse } from './types/tapchannelrpc/AddInvoiceResponse';
 import { SendPaymentRequestPartial } from './types/tapchannelrpc/SendPaymentRequest';
 import { SendPaymentResponse } from './types/tapchannelrpc/SendPaymentResponse';
+import { ListPaymentsRequestPartial } from './types/tapchannelrpc/ListPaymentsRequest';
+import { ListPaymentsResponse } from './types/tapchannelrpc/ListPaymentsResponse';
+import { TrackPaymentRequestPartial } from './types/tapchannelrpc/TrackPaymentRequest';
 
 /**
  * @ChannelsApi API interface for Tap's daemon.
@@ -93,5 +102,52 @@ export class ChannelsApi {
     request: AddInvoiceRequestPartial = {}
   ): Promise<AddInvoiceResponse> {
     return promisify(this.client.AddInvoice.bind(this.client))(request);
+  }
+
+  /**
+   * @listInvoices lists invoices that involve at least one Taproot Asset.
+   */
+  async listInvoices(
+    request: ListInvoicesRequestPartial = {}
+  ): Promise<ListInvoicesResponse> {
+    return promisify(this.client.ListInvoices.bind(this.client))(request);
+  }
+
+  /**
+   * @listPayments lists payments that involve at least one Taproot Asset.
+   */
+  async listPayments(
+    request: ListPaymentsRequestPartial = {}
+  ): Promise<ListPaymentsResponse> {
+    return promisify(this.client.ListPayments.bind(this.client))(request);
+  }
+
+  /**
+   * @subscribeInvoices streams invoices that involve at least one Taproot
+   * Asset.
+   */
+  subscribeInvoices(
+    request: SubscribeInvoicesRequestPartial = {}
+  ): ClientReadableStream<AssetInvoice> {
+    return this.client.SubscribeInvoices(request);
+  }
+
+  /**
+   * @subscribePayments streams payment updates that involve at least one
+   * Taproot Asset.
+   */
+  subscribePayments(
+    request: SubscribePaymentsRequestPartial = {}
+  ): ClientReadableStream<AssetPayment> {
+    return this.client.SubscribePayments(request);
+  }
+
+  /**
+   * @trackPayment streams updates for a single Taproot Asset payment.
+   */
+  trackPayment(
+    request: TrackPaymentRequestPartial = {}
+  ): ClientReadableStream<AssetPayment> {
+    return this.client.TrackPayment(request);
   }
 }

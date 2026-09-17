@@ -27,9 +27,12 @@ export interface ProtoGrpcType {
     AssetMeta: MessageTypeDefinition
     AssetMetaType: EnumTypeDefinition
     AssetOutPoint: MessageTypeDefinition
+    AssetSpecifier: MessageTypeDefinition
     AssetTransfer: MessageTypeDefinition
     AssetType: EnumTypeDefinition
     AssetVersion: EnumTypeDefinition
+    BakeMacaroonRequest: MessageTypeDefinition
+    BakeMacaroonResponse: MessageTypeDefinition
     BurnAssetRequest: MessageTypeDefinition
     BurnAssetResponse: MessageTypeDefinition
     ChainHash: MessageTypeDefinition
@@ -44,6 +47,8 @@ export interface ProtoGrpcType {
     ExternalKey: MessageTypeDefinition
     FetchAssetMetaRequest: MessageTypeDefinition
     FetchAssetMetaResponse: MessageTypeDefinition
+    FetchAssetRequest: MessageTypeDefinition
+    FetchAssetResponse: MessageTypeDefinition
     GenesisInfo: MessageTypeDefinition
     GenesisReveal: MessageTypeDefinition
     GetInfoRequest: MessageTypeDefinition
@@ -67,6 +72,7 @@ export interface ProtoGrpcType {
     ListTransfersResponse: MessageTypeDefinition
     ListUtxosRequest: MessageTypeDefinition
     ListUtxosResponse: MessageTypeDefinition
+    MacaroonPermission: MessageTypeDefinition
     ManagedUtxo: MessageTypeDefinition
     NewAddrRequest: MessageTypeDefinition
     OutPoint: MessageTypeDefinition
@@ -88,6 +94,7 @@ export interface ProtoGrpcType {
     SendAssetResponse: MessageTypeDefinition
     SendEvent: MessageTypeDefinition
     SendState: EnumTypeDefinition
+    SortDirection: EnumTypeDefinition
     SplitCommitment: MessageTypeDefinition
     StopRequest: MessageTypeDefinition
     StopResponse: MessageTypeDefinition

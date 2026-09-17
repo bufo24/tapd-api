@@ -6,8 +6,12 @@ import {
   AssetWalletClient,
   CommitVirtualPsbtsRequestPartial,
   CommitVirtualPsbtsResponse,
+  ExportAssetWalletBackupRequestPartial,
+  ExportAssetWalletBackupResponse,
   FundVirtualPsbtRequestPartial,
   FundVirtualPsbtResponse,
+  ImportAssetsFromBackupRequestPartial,
+  ImportAssetsFromBackupResponse,
   NextInternalKeyRequestPartial,
   NextInternalKeyResponse,
   NextScriptKeyRequestPartial,
@@ -198,5 +202,29 @@ export class AssetWalletApi {
     request: RemoveUTXOLeaseRequestPartial = {}
   ): Promise<RemoveUTXOLeaseResponse> {
     return promisify(this.client.RemoveUTXOLease.bind(this.client))(request);
+  }
+
+  /**
+   * @exportAssetWalletBackup exports a backup of all active assets in the
+   * wallet.
+   */
+  async exportAssetWalletBackup(
+    request: ExportAssetWalletBackupRequestPartial = {}
+  ): Promise<ExportAssetWalletBackupResponse> {
+    return promisify(this.client.ExportAssetWalletBackup.bind(this.client))(
+      request
+    );
+  }
+
+  /**
+   * @importAssetsFromBackup imports assets from a backup previously created by
+   * ExportAssetWalletBackup.
+   */
+  async importAssetsFromBackup(
+    request: ImportAssetsFromBackupRequestPartial = {}
+  ): Promise<ImportAssetsFromBackupResponse> {
+    return promisify(this.client.ImportAssetsFromBackup.bind(this.client))(
+      request
+    );
   }
 }

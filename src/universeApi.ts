@@ -5,6 +5,7 @@ import {
   AddFederationServerRequestPartial,
   AddFederationServerResponse,
   AssetLeafKeyResponse,
+  AssetLeavesRequestPartial,
   AssetLeafResponse,
   AssetProofPartial,
   AssetProofResponse,
@@ -14,6 +15,8 @@ import {
   AssetStatsQueryPartial,
   DeleteFederationServerRequestPartial,
   DeleteFederationServerResponse,
+  DeleteAssetLeafRequestPartial,
+  DeleteAssetLeafResponse,
   DeleteRootQueryPartial,
   DeleteRootResponse,
   IDPartial,
@@ -116,6 +119,16 @@ export class UniverseApi {
   }
 
   /**
+   * @deleteAssetLeaf deletes a single Universe leaf identified by its Universe
+   * ID and leaf key.
+   */
+  async deleteAssetLeaf(
+    request: DeleteAssetLeafRequestPartial = {}
+  ): Promise<DeleteAssetLeafResponse> {
+    return promisify(this.client.DeleteAssetLeaf.bind(this.client))(request);
+  }
+
+  /**
    * @assetLeafKeys AssetLeafKeys queries for the set of Universe keys associated with a given
    * asset_id or group_key. Each key takes the form: (outpoint, script_key),
    * where outpoint is an outpoint in the Bitcoin blockcahin that anchors a
@@ -134,7 +147,9 @@ export class UniverseApi {
    * took place on chain. The leaves contain a normal Taproot asset proof, as well
    * as details for the asset.
    */
-  async assetLeaves(request: IDPartial = {}): Promise<AssetLeafResponse> {
+  async assetLeaves(
+    request: AssetLeavesRequestPartial = {}
+  ): Promise<AssetLeafResponse> {
     return promisify(this.client.AssetLeaves.bind(this.client))(request);
   }
 

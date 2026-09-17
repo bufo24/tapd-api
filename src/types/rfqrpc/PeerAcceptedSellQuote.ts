@@ -14,6 +14,7 @@ export interface PeerAcceptedSellQuotePartial {
   'minTransportableMsat'?: (number | string | Long);
   'priceOracleMetadata'?: (string);
   'assetSpec'?: (_rfqrpc_AssetSpecPartial | null);
+  'acceptedMaxAmount'?: (number | string | Long);
 }
 
 export interface PeerAcceptedSellQuote {
@@ -26,4 +27,5 @@ export interface PeerAcceptedSellQuote {
   'minTransportableMsat': (string);
   'priceOracleMetadata': (string);
   'assetSpec': (_rfqrpc_AssetSpec | null);
+  'acceptedMaxAmount': (string);
 }

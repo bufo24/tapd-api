@@ -4,8 +4,10 @@ import type { AssetLeafPartial as _universerpc_AssetLeafPartial, AssetLeaf as _u
 
 export interface AssetLeafResponsePartial {
   'leaves'?: (_universerpc_AssetLeafPartial)[];
+  'hasMore'?: (boolean);
 }
 
 export interface AssetLeafResponse {
   'leaves': (_universerpc_AssetLeaf)[];
+  'hasMore': (boolean);
 }

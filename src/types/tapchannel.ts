@@ -47,6 +47,7 @@ export interface ProtoGrpcType {
     ChannelBalanceResponse: MessageTypeDefinition
     ChannelCloseSummary: MessageTypeDefinition
     ChannelCloseUpdate: MessageTypeDefinition
+    ChannelCommitUpdate: MessageTypeDefinition
     ChannelConstraints: MessageTypeDefinition
     ChannelEdge: MessageTypeDefinition
     ChannelEdgeUpdate: MessageTypeDefinition
@@ -111,6 +112,7 @@ export interface ProtoGrpcType {
     GetRecoveryInfoRequest: MessageTypeDefinition
     GetRecoveryInfoResponse: MessageTypeDefinition
     GetTransactionsRequest: MessageTypeDefinition
+    GraphCacheStatus: EnumTypeDefinition
     GraphTopologySubscription: MessageTypeDefinition
     GraphTopologyUpdate: MessageTypeDefinition
     HTLC: MessageTypeDefinition
@@ -167,6 +169,7 @@ export interface ProtoGrpcType {
     NodeMetricsResponse: MessageTypeDefinition
     NodePair: MessageTypeDefinition
     NodeUpdate: MessageTypeDefinition
+    OnionMessageUpdate: MessageTypeDefinition
     Op: MessageTypeDefinition
     OpenChannelRequest: MessageTypeDefinition
     OpenStatusUpdate: MessageTypeDefinition
@@ -209,9 +212,8 @@ export interface ProtoGrpcType {
     SendCustomMessageResponse: MessageTypeDefinition
     SendManyRequest: MessageTypeDefinition
     SendManyResponse: MessageTypeDefinition
-    SendRequest: MessageTypeDefinition
-    SendResponse: MessageTypeDefinition
-    SendToRouteRequest: MessageTypeDefinition
+    SendOnionMessageRequest: MessageTypeDefinition
+    SendOnionMessageResponse: MessageTypeDefinition
     SetID: MessageTypeDefinition
     SignMessageRequest: MessageTypeDefinition
     SignMessageResponse: MessageTypeDefinition
@@ -219,6 +221,7 @@ export interface ProtoGrpcType {
     StopResponse: MessageTypeDefinition
     StreamAuth: MessageTypeDefinition
     SubscribeCustomMessagesRequest: MessageTypeDefinition
+    SubscribeOnionMessagesRequest: MessageTypeDefinition
     TimestampedError: MessageTypeDefinition
     Transaction: MessageTypeDefinition
     TransactionDetails: MessageTypeDefinition
@@ -243,7 +246,11 @@ export interface ProtoGrpcType {
     AddAssetSellOrderResponse: MessageTypeDefinition
     AssetSpec: MessageTypeDefinition
     AssetSpecifier: MessageTypeDefinition
+    ExecutionPolicy: EnumTypeDefinition
     FixedPoint: MessageTypeDefinition
+    ForwardingEvent: MessageTypeDefinition
+    ForwardingHistoryRequest: MessageTypeDefinition
+    ForwardingHistoryResponse: MessageTypeDefinition
     InvalidQuoteResponse: MessageTypeDefinition
     PeerAcceptedBuyQuote: MessageTypeDefinition
     PeerAcceptedBuyQuoteEvent: MessageTypeDefinition
@@ -255,6 +262,7 @@ export interface ProtoGrpcType {
     RejectedQuoteResponse: MessageTypeDefinition
     Rfq: SubtypeConstructor<typeof grpc.Client, _rfqrpc_RfqClient> & { service: _rfqrpc_RfqDefinition }
     RfqEvent: MessageTypeDefinition
+    RfqPolicyType: EnumTypeDefinition
     SubscribeRfqEventNtfnsRequest: MessageTypeDefinition
   }
   routerrpc: {
@@ -268,6 +276,8 @@ export interface ProtoGrpcType {
     CircuitKey: MessageTypeDefinition
     DeleteAliasesRequest: MessageTypeDefinition
     DeleteAliasesResponse: MessageTypeDefinition
+    DeleteForwardingHistoryRequest: MessageTypeDefinition
+    DeleteForwardingHistoryResponse: MessageTypeDefinition
     FailureDetail: EnumTypeDefinition
     FinalHtlcEvent: MessageTypeDefinition
     FindBaseAliasRequest: MessageTypeDefinition
@@ -284,8 +294,6 @@ export interface ProtoGrpcType {
     MissionControlConfig: MessageTypeDefinition
     PairData: MessageTypeDefinition
     PairHistory: MessageTypeDefinition
-    PaymentState: EnumTypeDefinition
-    PaymentStatus: MessageTypeDefinition
     QueryMissionControlRequest: MessageTypeDefinition
     QueryMissionControlResponse: MessageTypeDefinition
     QueryProbabilityRequest: MessageTypeDefinition
@@ -298,7 +306,6 @@ export interface ProtoGrpcType {
     Router: SubtypeConstructor<typeof grpc.Client, _routerrpc_RouterClient> & { service: _routerrpc_RouterDefinition }
     SendPaymentRequest: MessageTypeDefinition
     SendToRouteRequest: MessageTypeDefinition
-    SendToRouteResponse: MessageTypeDefinition
     SetMissionControlConfigRequest: MessageTypeDefinition
     SetMissionControlConfigResponse: MessageTypeDefinition
     SettleEvent: MessageTypeDefinition
@@ -315,17 +322,27 @@ export interface ProtoGrpcType {
     AcceptedSellQuotes: MessageTypeDefinition
     AddInvoiceRequest: MessageTypeDefinition
     AddInvoiceResponse: MessageTypeDefinition
+    AssetAmount: MessageTypeDefinition
+    AssetInvoice: MessageTypeDefinition
     AssetPayReq: MessageTypeDefinition
     AssetPayReqResponse: MessageTypeDefinition
+    AssetPayment: MessageTypeDefinition
     EncodeCustomRecordsRequest: MessageTypeDefinition
     EncodeCustomRecordsResponse: MessageTypeDefinition
     FundChannelRequest: MessageTypeDefinition
     FundChannelResponse: MessageTypeDefinition
     HodlInvoice: MessageTypeDefinition
+    ListInvoicesRequest: MessageTypeDefinition
+    ListInvoicesResponse: MessageTypeDefinition
+    ListPaymentsRequest: MessageTypeDefinition
+    ListPaymentsResponse: MessageTypeDefinition
     RouterSendPaymentData: MessageTypeDefinition
     SendPaymentRequest: MessageTypeDefinition
     SendPaymentResponse: MessageTypeDefinition
+    SubscribeInvoicesRequest: MessageTypeDefinition
+    SubscribePaymentsRequest: MessageTypeDefinition
     TaprootAssetChannels: SubtypeConstructor<typeof grpc.Client, _tapchannelrpc_TaprootAssetChannelsClient> & { service: _tapchannelrpc_TaprootAssetChannelsDefinition }
+    TrackPaymentRequest: MessageTypeDefinition
   }
   taprpc: {
     Addr: MessageTypeDefinition
@@ -346,9 +363,12 @@ export interface ProtoGrpcType {
     AssetMeta: MessageTypeDefinition
     AssetMetaType: EnumTypeDefinition
     AssetOutPoint: MessageTypeDefinition
+    AssetSpecifier: MessageTypeDefinition
     AssetTransfer: MessageTypeDefinition
     AssetType: EnumTypeDefinition
     AssetVersion: EnumTypeDefinition
+    BakeMacaroonRequest: MessageTypeDefinition
+    BakeMacaroonResponse: MessageTypeDefinition
     BurnAssetRequest: MessageTypeDefinition
     BurnAssetResponse: MessageTypeDefinition
     ChainHash: MessageTypeDefinition
@@ -363,6 +383,8 @@ export interface ProtoGrpcType {
     ExternalKey: MessageTypeDefinition
     FetchAssetMetaRequest: MessageTypeDefinition
     FetchAssetMetaResponse: MessageTypeDefinition
+    FetchAssetRequest: MessageTypeDefinition
+    FetchAssetResponse: MessageTypeDefinition
     GenesisInfo: MessageTypeDefinition
     GenesisReveal: MessageTypeDefinition
     GetInfoRequest: MessageTypeDefinition
@@ -386,6 +408,7 @@ export interface ProtoGrpcType {
     ListTransfersResponse: MessageTypeDefinition
     ListUtxosRequest: MessageTypeDefinition
     ListUtxosResponse: MessageTypeDefinition
+    MacaroonPermission: MessageTypeDefinition
     ManagedUtxo: MessageTypeDefinition
     NewAddrRequest: MessageTypeDefinition
     OutPoint: MessageTypeDefinition
@@ -407,6 +430,7 @@ export interface ProtoGrpcType {
     SendAssetResponse: MessageTypeDefinition
     SendEvent: MessageTypeDefinition
     SendState: EnumTypeDefinition
+    SortDirection: EnumTypeDefinition
     SplitCommitment: MessageTypeDefinition
     StopRequest: MessageTypeDefinition
     StopResponse: MessageTypeDefinition

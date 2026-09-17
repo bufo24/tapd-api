@@ -12,13 +12,18 @@ export interface ProtoGrpcType {
   assetwalletrpc: {
     AnchorVirtualPsbtsRequest: MessageTypeDefinition
     AssetWallet: SubtypeConstructor<typeof grpc.Client, _assetwalletrpc_AssetWalletClient> & { service: _assetwalletrpc_AssetWalletDefinition }
+    BackupMode: EnumTypeDefinition
     CoinSelectType: EnumTypeDefinition
     CommitVirtualPsbtsRequest: MessageTypeDefinition
     CommitVirtualPsbtsResponse: MessageTypeDefinition
     DeclareScriptKeyRequest: MessageTypeDefinition
     DeclareScriptKeyResponse: MessageTypeDefinition
+    ExportAssetWalletBackupRequest: MessageTypeDefinition
+    ExportAssetWalletBackupResponse: MessageTypeDefinition
     FundVirtualPsbtRequest: MessageTypeDefinition
     FundVirtualPsbtResponse: MessageTypeDefinition
+    ImportAssetsFromBackupRequest: MessageTypeDefinition
+    ImportAssetsFromBackupResponse: MessageTypeDefinition
     NextInternalKeyRequest: MessageTypeDefinition
     NextInternalKeyResponse: MessageTypeDefinition
     NextScriptKeyRequest: MessageTypeDefinition
@@ -35,6 +40,7 @@ export interface ProtoGrpcType {
     RemoveUTXOLeaseResponse: MessageTypeDefinition
     SignVirtualPsbtRequest: MessageTypeDefinition
     SignVirtualPsbtResponse: MessageTypeDefinition
+    TransitionProofVersion: EnumTypeDefinition
     TxTemplate: MessageTypeDefinition
     VerifyAssetOwnershipRequest: MessageTypeDefinition
     VerifyAssetOwnershipResponse: MessageTypeDefinition
@@ -58,9 +64,12 @@ export interface ProtoGrpcType {
     AssetMeta: MessageTypeDefinition
     AssetMetaType: EnumTypeDefinition
     AssetOutPoint: MessageTypeDefinition
+    AssetSpecifier: MessageTypeDefinition
     AssetTransfer: MessageTypeDefinition
     AssetType: EnumTypeDefinition
     AssetVersion: EnumTypeDefinition
+    BakeMacaroonRequest: MessageTypeDefinition
+    BakeMacaroonResponse: MessageTypeDefinition
     BurnAssetRequest: MessageTypeDefinition
     BurnAssetResponse: MessageTypeDefinition
     ChainHash: MessageTypeDefinition
@@ -75,6 +84,8 @@ export interface ProtoGrpcType {
     ExternalKey: MessageTypeDefinition
     FetchAssetMetaRequest: MessageTypeDefinition
     FetchAssetMetaResponse: MessageTypeDefinition
+    FetchAssetRequest: MessageTypeDefinition
+    FetchAssetResponse: MessageTypeDefinition
     GenesisInfo: MessageTypeDefinition
     GenesisReveal: MessageTypeDefinition
     GetInfoRequest: MessageTypeDefinition
@@ -98,6 +109,7 @@ export interface ProtoGrpcType {
     ListTransfersResponse: MessageTypeDefinition
     ListUtxosRequest: MessageTypeDefinition
     ListUtxosResponse: MessageTypeDefinition
+    MacaroonPermission: MessageTypeDefinition
     ManagedUtxo: MessageTypeDefinition
     NewAddrRequest: MessageTypeDefinition
     OutPoint: MessageTypeDefinition
@@ -119,6 +131,7 @@ export interface ProtoGrpcType {
     SendAssetResponse: MessageTypeDefinition
     SendEvent: MessageTypeDefinition
     SendState: EnumTypeDefinition
+    SortDirection: EnumTypeDefinition
     SplitCommitment: MessageTypeDefinition
     StopRequest: MessageTypeDefinition
     StopResponse: MessageTypeDefinition
