@@ -106,6 +106,7 @@ export class ChannelsApi {
 
   /**
    * @listInvoices lists invoices that involve at least one Taproot Asset.
+   * @since tapd v0.8.4
    */
   async listInvoices(
     request: ListInvoicesRequestPartial = {}
@@ -115,6 +116,7 @@ export class ChannelsApi {
 
   /**
    * @listPayments lists payments that involve at least one Taproot Asset.
+   * @since tapd v0.8.4
    */
   async listPayments(
     request: ListPaymentsRequestPartial = {}
@@ -125,6 +127,7 @@ export class ChannelsApi {
   /**
    * @subscribeInvoices streams invoices that involve at least one Taproot
    * Asset.
+   * @since tapd v0.8.4
    */
   subscribeInvoices(
     request: SubscribeInvoicesRequestPartial = {}
@@ -135,6 +138,7 @@ export class ChannelsApi {
   /**
    * @subscribePayments streams payment updates that involve at least one
    * Taproot Asset.
+   * @since tapd v0.8.4
    */
   subscribePayments(
     request: SubscribePaymentsRequestPartial = {}
@@ -144,6 +148,7 @@ export class ChannelsApi {
 
   /**
    * @trackPayment streams updates for a single Taproot Asset payment.
+   * @since tapd v0.8.4
    */
   trackPayment(
     request: TrackPaymentRequestPartial = {}

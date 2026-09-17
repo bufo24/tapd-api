@@ -1,13 +1,12 @@
 {
   "name": "@lightningpolar/tapd-api",
-  "version": "0.8.4-alpha",
+  "version": "0.7.0-alpha",
   "description": "Bitcoin Taproot Assets Protocol API client for Lightning Labs tapd daemon",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "config": {
-    "tapd_release_tag": "v0.8.4",
-    "lnd_release_tag": "v0.20.0-beta",
-    "tapd_base_release_tag": "v0.7.0"
+    "tapd_release_tag": "v0.7.0",
+    "lnd_release_tag": "v0.20.0-beta"
   },
   "files": [
     "dist",
@@ -19,7 +18,7 @@
     "push": "tsc && npm publish --access public",
     "build": "tsc",
     "generate:clean": "rm -rf ./src/types",
-    "generate:protos": "sh ./scripts/update_protos.sh ${npm_package_config_tapd_release_tag} ${npm_package_config_lnd_release_tag} ${npm_package_config_tapd_base_release_tag}",
+    "generate:protos": "sh ./scripts/update_protos.sh ${npm_package_config_tapd_release_tag} ${npm_package_config_lnd_release_tag}",
     "generate:types": "sh ./scripts/gen_types.sh",
     "generate:index": "node ./scripts/generateTypesIndex.js",
     "generate": "npm run generate:clean && npm run generate:protos && npm run generate:types && npm run generate:index"
