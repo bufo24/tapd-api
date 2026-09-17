@@ -118,7 +118,7 @@ export class RfqApi {
 
   /**
    * @forwardingHistory queries completed asset forwarding events.
-   * @since tapd v0.8.4
+   * @since tapd v0.8.0
    */
   async forwardingHistory(
     request: ForwardingHistoryRequestPartial = {}
