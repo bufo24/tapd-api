@@ -133,8 +133,6 @@ export interface _lnrpc_PendingChannelsResponse_WaitingCloseChannelPartial {
   'commitments'?: (_lnrpc_PendingChannelsResponse_CommitmentsPartial | null);
   'closingTxid'?: (string);
   'closingTxHex'?: (string);
-  'blocksTilCloseConfirmed'?: (number);
-  'closeHeight'?: (number);
 }
 
 export interface _lnrpc_PendingChannelsResponse_WaitingCloseChannel {
@@ -143,8 +141,6 @@ export interface _lnrpc_PendingChannelsResponse_WaitingCloseChannel {
   'commitments': (_lnrpc_PendingChannelsResponse_Commitments | null);
   'closingTxid': (string);
   'closingTxHex': (string);
-  'blocksTilCloseConfirmed': (number);
-  'closeHeight': (number);
 }
 
 export interface PendingChannelsResponsePartial {

@@ -47,7 +47,6 @@ export interface ProtoGrpcType {
     ChannelBalanceResponse: MessageTypeDefinition
     ChannelCloseSummary: MessageTypeDefinition
     ChannelCloseUpdate: MessageTypeDefinition
-    ChannelCommitUpdate: MessageTypeDefinition
     ChannelConstraints: MessageTypeDefinition
     ChannelEdge: MessageTypeDefinition
     ChannelEdgeUpdate: MessageTypeDefinition
@@ -112,7 +111,6 @@ export interface ProtoGrpcType {
     GetRecoveryInfoRequest: MessageTypeDefinition
     GetRecoveryInfoResponse: MessageTypeDefinition
     GetTransactionsRequest: MessageTypeDefinition
-    GraphCacheStatus: EnumTypeDefinition
     GraphTopologySubscription: MessageTypeDefinition
     GraphTopologyUpdate: MessageTypeDefinition
     HTLC: MessageTypeDefinition
@@ -169,7 +167,6 @@ export interface ProtoGrpcType {
     NodeMetricsResponse: MessageTypeDefinition
     NodePair: MessageTypeDefinition
     NodeUpdate: MessageTypeDefinition
-    OnionMessageUpdate: MessageTypeDefinition
     Op: MessageTypeDefinition
     OpenChannelRequest: MessageTypeDefinition
     OpenStatusUpdate: MessageTypeDefinition
@@ -212,8 +209,9 @@ export interface ProtoGrpcType {
     SendCustomMessageResponse: MessageTypeDefinition
     SendManyRequest: MessageTypeDefinition
     SendManyResponse: MessageTypeDefinition
-    SendOnionMessageRequest: MessageTypeDefinition
-    SendOnionMessageResponse: MessageTypeDefinition
+    SendRequest: MessageTypeDefinition
+    SendResponse: MessageTypeDefinition
+    SendToRouteRequest: MessageTypeDefinition
     SetID: MessageTypeDefinition
     SignMessageRequest: MessageTypeDefinition
     SignMessageResponse: MessageTypeDefinition
@@ -221,7 +219,6 @@ export interface ProtoGrpcType {
     StopResponse: MessageTypeDefinition
     StreamAuth: MessageTypeDefinition
     SubscribeCustomMessagesRequest: MessageTypeDefinition
-    SubscribeOnionMessagesRequest: MessageTypeDefinition
     TimestampedError: MessageTypeDefinition
     Transaction: MessageTypeDefinition
     TransactionDetails: MessageTypeDefinition
@@ -276,8 +273,6 @@ export interface ProtoGrpcType {
     CircuitKey: MessageTypeDefinition
     DeleteAliasesRequest: MessageTypeDefinition
     DeleteAliasesResponse: MessageTypeDefinition
-    DeleteForwardingHistoryRequest: MessageTypeDefinition
-    DeleteForwardingHistoryResponse: MessageTypeDefinition
     FailureDetail: EnumTypeDefinition
     FinalHtlcEvent: MessageTypeDefinition
     FindBaseAliasRequest: MessageTypeDefinition
@@ -294,6 +289,8 @@ export interface ProtoGrpcType {
     MissionControlConfig: MessageTypeDefinition
     PairData: MessageTypeDefinition
     PairHistory: MessageTypeDefinition
+    PaymentState: EnumTypeDefinition
+    PaymentStatus: MessageTypeDefinition
     QueryMissionControlRequest: MessageTypeDefinition
     QueryMissionControlResponse: MessageTypeDefinition
     QueryProbabilityRequest: MessageTypeDefinition
@@ -306,6 +303,7 @@ export interface ProtoGrpcType {
     Router: SubtypeConstructor<typeof grpc.Client, _routerrpc_RouterClient> & { service: _routerrpc_RouterDefinition }
     SendPaymentRequest: MessageTypeDefinition
     SendToRouteRequest: MessageTypeDefinition
+    SendToRouteResponse: MessageTypeDefinition
     SetMissionControlConfigRequest: MessageTypeDefinition
     SetMissionControlConfigResponse: MessageTypeDefinition
     SettleEvent: MessageTypeDefinition

@@ -21,6 +21,7 @@ export interface QueryRoutesRequestPartial {
   'cltvLimit'?: (number);
   'amtMsat'?: (number | string | Long);
   'destCustomRecords'?: ({[key: number]: Buffer | Uint8Array | string});
+  'outgoingChanId'?: (number | string | Long);
   'lastHopPubkey'?: (Buffer | Uint8Array | string);
   'routeHints'?: (_lnrpc_RouteHintPartial)[];
   'destFeatures'?: (_lnrpc_FeatureBitPartial)[];
@@ -42,6 +43,7 @@ export interface QueryRoutesRequest {
   'cltvLimit': (number);
   'amtMsat': (string);
   'destCustomRecords': ({[key: number]: Buffer});
+  'outgoingChanId': (string);
   'lastHopPubkey': (Buffer);
   'routeHints': (_lnrpc_RouteHint)[];
   'destFeatures': (_lnrpc_FeatureBit)[];

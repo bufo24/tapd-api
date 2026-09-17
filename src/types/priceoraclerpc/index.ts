@@ -1,6 +1,5 @@
 export * from './AssetRates';
 export * from './AssetSpecifier';
-export * from './ErrorCode';
 export * from './FixedPoint';
 export * from './Intent';
 export * from './PriceOracle';

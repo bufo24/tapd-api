@@ -11,7 +11,6 @@ export interface ProtoGrpcType {
   priceoraclerpc: {
     AssetRates: MessageTypeDefinition
     AssetSpecifier: MessageTypeDefinition
-    ErrorCode: EnumTypeDefinition
     FixedPoint: MessageTypeDefinition
     Intent: EnumTypeDefinition
     PriceOracle: SubtypeConstructor<typeof grpc.Client, _priceoraclerpc_PriceOracleClient> & { service: _priceoraclerpc_PriceOracleDefinition }

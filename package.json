@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "config": {
     "tapd_release_tag": "v0.8.4",
-    "lnd_release_tag": "v0.21.3-beta",
+    "lnd_release_tag": "v0.20.0-beta",
     "tapd_base_release_tag": "v0.7.0"
   },
   "files": [

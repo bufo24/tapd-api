@@ -8,8 +8,6 @@ import type { BuildRouteRequestPartial as _routerrpc_BuildRouteRequestPartial, B
 import type { BuildRouteResponsePartial as _routerrpc_BuildRouteResponsePartial, BuildRouteResponse as _routerrpc_BuildRouteResponse } from '../routerrpc/BuildRouteResponse';
 import type { DeleteAliasesRequestPartial as _routerrpc_DeleteAliasesRequestPartial, DeleteAliasesRequest as _routerrpc_DeleteAliasesRequest } from '../routerrpc/DeleteAliasesRequest';
 import type { DeleteAliasesResponsePartial as _routerrpc_DeleteAliasesResponsePartial, DeleteAliasesResponse as _routerrpc_DeleteAliasesResponse } from '../routerrpc/DeleteAliasesResponse';
-import type { DeleteForwardingHistoryRequestPartial as _routerrpc_DeleteForwardingHistoryRequestPartial, DeleteForwardingHistoryRequest as _routerrpc_DeleteForwardingHistoryRequest } from '../routerrpc/DeleteForwardingHistoryRequest';
-import type { DeleteForwardingHistoryResponsePartial as _routerrpc_DeleteForwardingHistoryResponsePartial, DeleteForwardingHistoryResponse as _routerrpc_DeleteForwardingHistoryResponse } from '../routerrpc/DeleteForwardingHistoryResponse';
 import type { FindBaseAliasRequestPartial as _routerrpc_FindBaseAliasRequestPartial, FindBaseAliasRequest as _routerrpc_FindBaseAliasRequest } from '../routerrpc/FindBaseAliasRequest';
 import type { FindBaseAliasResponsePartial as _routerrpc_FindBaseAliasResponsePartial, FindBaseAliasResponse as _routerrpc_FindBaseAliasResponse } from '../routerrpc/FindBaseAliasResponse';
 import type { ForwardHtlcInterceptRequestPartial as _routerrpc_ForwardHtlcInterceptRequestPartial, ForwardHtlcInterceptRequest as _routerrpc_ForwardHtlcInterceptRequest } from '../routerrpc/ForwardHtlcInterceptRequest';
@@ -19,6 +17,7 @@ import type { GetMissionControlConfigResponsePartial as _routerrpc_GetMissionCon
 import type { HTLCAttemptPartial as _lnrpc_HTLCAttemptPartial, HTLCAttempt as _lnrpc_HTLCAttempt } from '../lnrpc/HTLCAttempt';
 import type { HtlcEventPartial as _routerrpc_HtlcEventPartial, HtlcEvent as _routerrpc_HtlcEvent } from '../routerrpc/HtlcEvent';
 import type { PaymentPartial as _lnrpc_PaymentPartial, Payment as _lnrpc_Payment } from '../lnrpc/Payment';
+import type { PaymentStatusPartial as _routerrpc_PaymentStatusPartial, PaymentStatus as _routerrpc_PaymentStatus } from '../routerrpc/PaymentStatus';
 import type { QueryMissionControlRequestPartial as _routerrpc_QueryMissionControlRequestPartial, QueryMissionControlRequest as _routerrpc_QueryMissionControlRequest } from '../routerrpc/QueryMissionControlRequest';
 import type { QueryMissionControlResponsePartial as _routerrpc_QueryMissionControlResponsePartial, QueryMissionControlResponse as _routerrpc_QueryMissionControlResponse } from '../routerrpc/QueryMissionControlResponse';
 import type { QueryProbabilityRequestPartial as _routerrpc_QueryProbabilityRequestPartial, QueryProbabilityRequest as _routerrpc_QueryProbabilityRequest } from '../routerrpc/QueryProbabilityRequest';
@@ -29,6 +28,7 @@ import type { RouteFeeRequestPartial as _routerrpc_RouteFeeRequestPartial, Route
 import type { RouteFeeResponsePartial as _routerrpc_RouteFeeResponsePartial, RouteFeeResponse as _routerrpc_RouteFeeResponse } from '../routerrpc/RouteFeeResponse';
 import type { SendPaymentRequestPartial as _routerrpc_SendPaymentRequestPartial, SendPaymentRequest as _routerrpc_SendPaymentRequest } from '../routerrpc/SendPaymentRequest';
 import type { SendToRouteRequestPartial as _routerrpc_SendToRouteRequestPartial, SendToRouteRequest as _routerrpc_SendToRouteRequest } from '../routerrpc/SendToRouteRequest';
+import type { SendToRouteResponsePartial as _routerrpc_SendToRouteResponsePartial, SendToRouteResponse as _routerrpc_SendToRouteResponse } from '../routerrpc/SendToRouteResponse';
 import type { SetMissionControlConfigRequestPartial as _routerrpc_SetMissionControlConfigRequestPartial, SetMissionControlConfigRequest as _routerrpc_SetMissionControlConfigRequest } from '../routerrpc/SetMissionControlConfigRequest';
 import type { SetMissionControlConfigResponsePartial as _routerrpc_SetMissionControlConfigResponsePartial, SetMissionControlConfigResponse as _routerrpc_SetMissionControlConfigResponse } from '../routerrpc/SetMissionControlConfigResponse';
 import type { SubscribeHtlcEventsRequestPartial as _routerrpc_SubscribeHtlcEventsRequestPartial, SubscribeHtlcEventsRequest as _routerrpc_SubscribeHtlcEventsRequest } from '../routerrpc/SubscribeHtlcEventsRequest';
@@ -48,15 +48,6 @@ export interface RouterClient extends grpc.Client {
   buildRoute(argument: _routerrpc_BuildRouteRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_routerrpc_BuildRouteResponse>): grpc.ClientUnaryCall;
   buildRoute(argument: _routerrpc_BuildRouteRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_BuildRouteResponse>): grpc.ClientUnaryCall;
   buildRoute(argument: _routerrpc_BuildRouteRequestPartial, callback: grpc.requestCallback<_routerrpc_BuildRouteResponse>): grpc.ClientUnaryCall;
-  
-  DeleteForwardingHistory(argument: _routerrpc_DeleteForwardingHistoryRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_DeleteForwardingHistoryResponse>): grpc.ClientUnaryCall;
-  DeleteForwardingHistory(argument: _routerrpc_DeleteForwardingHistoryRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_routerrpc_DeleteForwardingHistoryResponse>): grpc.ClientUnaryCall;
-  DeleteForwardingHistory(argument: _routerrpc_DeleteForwardingHistoryRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_DeleteForwardingHistoryResponse>): grpc.ClientUnaryCall;
-  DeleteForwardingHistory(argument: _routerrpc_DeleteForwardingHistoryRequestPartial, callback: grpc.requestCallback<_routerrpc_DeleteForwardingHistoryResponse>): grpc.ClientUnaryCall;
-  deleteForwardingHistory(argument: _routerrpc_DeleteForwardingHistoryRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_DeleteForwardingHistoryResponse>): grpc.ClientUnaryCall;
-  deleteForwardingHistory(argument: _routerrpc_DeleteForwardingHistoryRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_routerrpc_DeleteForwardingHistoryResponse>): grpc.ClientUnaryCall;
-  deleteForwardingHistory(argument: _routerrpc_DeleteForwardingHistoryRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_DeleteForwardingHistoryResponse>): grpc.ClientUnaryCall;
-  deleteForwardingHistory(argument: _routerrpc_DeleteForwardingHistoryRequestPartial, callback: grpc.requestCallback<_routerrpc_DeleteForwardingHistoryResponse>): grpc.ClientUnaryCall;
   
   EstimateRouteFee(argument: _routerrpc_RouteFeeRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_RouteFeeResponse>): grpc.ClientUnaryCall;
   EstimateRouteFee(argument: _routerrpc_RouteFeeRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_routerrpc_RouteFeeResponse>): grpc.ClientUnaryCall;
@@ -108,10 +99,24 @@ export interface RouterClient extends grpc.Client {
   resetMissionControl(argument: _routerrpc_ResetMissionControlRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_ResetMissionControlResponse>): grpc.ClientUnaryCall;
   resetMissionControl(argument: _routerrpc_ResetMissionControlRequestPartial, callback: grpc.requestCallback<_routerrpc_ResetMissionControlResponse>): grpc.ClientUnaryCall;
   
+  SendPayment(argument: _routerrpc_SendPaymentRequestPartial, metadata: grpc.Metadata, options?: grpc.CallOptions): grpc.ClientReadableStream<_routerrpc_PaymentStatus>;
+  SendPayment(argument: _routerrpc_SendPaymentRequestPartial, options?: grpc.CallOptions): grpc.ClientReadableStream<_routerrpc_PaymentStatus>;
+  sendPayment(argument: _routerrpc_SendPaymentRequestPartial, metadata: grpc.Metadata, options?: grpc.CallOptions): grpc.ClientReadableStream<_routerrpc_PaymentStatus>;
+  sendPayment(argument: _routerrpc_SendPaymentRequestPartial, options?: grpc.CallOptions): grpc.ClientReadableStream<_routerrpc_PaymentStatus>;
+  
   SendPaymentV2(argument: _routerrpc_SendPaymentRequestPartial, metadata: grpc.Metadata, options?: grpc.CallOptions): grpc.ClientReadableStream<_lnrpc_Payment>;
   SendPaymentV2(argument: _routerrpc_SendPaymentRequestPartial, options?: grpc.CallOptions): grpc.ClientReadableStream<_lnrpc_Payment>;
   sendPaymentV2(argument: _routerrpc_SendPaymentRequestPartial, metadata: grpc.Metadata, options?: grpc.CallOptions): grpc.ClientReadableStream<_lnrpc_Payment>;
   sendPaymentV2(argument: _routerrpc_SendPaymentRequestPartial, options?: grpc.CallOptions): grpc.ClientReadableStream<_lnrpc_Payment>;
+  
+  SendToRoute(argument: _routerrpc_SendToRouteRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_SendToRouteResponse>): grpc.ClientUnaryCall;
+  SendToRoute(argument: _routerrpc_SendToRouteRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_routerrpc_SendToRouteResponse>): grpc.ClientUnaryCall;
+  SendToRoute(argument: _routerrpc_SendToRouteRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_SendToRouteResponse>): grpc.ClientUnaryCall;
+  SendToRoute(argument: _routerrpc_SendToRouteRequestPartial, callback: grpc.requestCallback<_routerrpc_SendToRouteResponse>): grpc.ClientUnaryCall;
+  sendToRoute(argument: _routerrpc_SendToRouteRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_SendToRouteResponse>): grpc.ClientUnaryCall;
+  sendToRoute(argument: _routerrpc_SendToRouteRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_routerrpc_SendToRouteResponse>): grpc.ClientUnaryCall;
+  sendToRoute(argument: _routerrpc_SendToRouteRequestPartial, options: grpc.CallOptions, callback: grpc.requestCallback<_routerrpc_SendToRouteResponse>): grpc.ClientUnaryCall;
+  sendToRoute(argument: _routerrpc_SendToRouteRequestPartial, callback: grpc.requestCallback<_routerrpc_SendToRouteResponse>): grpc.ClientUnaryCall;
   
   SendToRouteV2(argument: _routerrpc_SendToRouteRequestPartial, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_lnrpc_HTLCAttempt>): grpc.ClientUnaryCall;
   SendToRouteV2(argument: _routerrpc_SendToRouteRequestPartial, metadata: grpc.Metadata, callback: grpc.requestCallback<_lnrpc_HTLCAttempt>): grpc.ClientUnaryCall;
@@ -135,6 +140,11 @@ export interface RouterClient extends grpc.Client {
   SubscribeHtlcEvents(argument: _routerrpc_SubscribeHtlcEventsRequestPartial, options?: grpc.CallOptions): grpc.ClientReadableStream<_routerrpc_HtlcEvent>;
   subscribeHtlcEvents(argument: _routerrpc_SubscribeHtlcEventsRequestPartial, metadata: grpc.Metadata, options?: grpc.CallOptions): grpc.ClientReadableStream<_routerrpc_HtlcEvent>;
   subscribeHtlcEvents(argument: _routerrpc_SubscribeHtlcEventsRequestPartial, options?: grpc.CallOptions): grpc.ClientReadableStream<_routerrpc_HtlcEvent>;
+  
+  TrackPayment(argument: _routerrpc_TrackPaymentRequestPartial, metadata: grpc.Metadata, options?: grpc.CallOptions): grpc.ClientReadableStream<_routerrpc_PaymentStatus>;
+  TrackPayment(argument: _routerrpc_TrackPaymentRequestPartial, options?: grpc.CallOptions): grpc.ClientReadableStream<_routerrpc_PaymentStatus>;
+  trackPayment(argument: _routerrpc_TrackPaymentRequestPartial, metadata: grpc.Metadata, options?: grpc.CallOptions): grpc.ClientReadableStream<_routerrpc_PaymentStatus>;
+  trackPayment(argument: _routerrpc_TrackPaymentRequestPartial, options?: grpc.CallOptions): grpc.ClientReadableStream<_routerrpc_PaymentStatus>;
   
   TrackPaymentV2(argument: _routerrpc_TrackPaymentRequestPartial, metadata: grpc.Metadata, options?: grpc.CallOptions): grpc.ClientReadableStream<_lnrpc_Payment>;
   TrackPaymentV2(argument: _routerrpc_TrackPaymentRequestPartial, options?: grpc.CallOptions): grpc.ClientReadableStream<_lnrpc_Payment>;
@@ -196,8 +206,6 @@ export interface RouterClient extends grpc.Client {
 export interface RouterHandlers extends grpc.UntypedServiceImplementation {
   BuildRoute: grpc.handleUnaryCall<_routerrpc_BuildRouteRequest, _routerrpc_BuildRouteResponsePartial>;
   
-  DeleteForwardingHistory: grpc.handleUnaryCall<_routerrpc_DeleteForwardingHistoryRequest, _routerrpc_DeleteForwardingHistoryResponsePartial>;
-  
   EstimateRouteFee: grpc.handleUnaryCall<_routerrpc_RouteFeeRequest, _routerrpc_RouteFeeResponsePartial>;
   
   GetMissionControlConfig: grpc.handleUnaryCall<_routerrpc_GetMissionControlConfigRequest, _routerrpc_GetMissionControlConfigResponsePartial>;
@@ -210,13 +218,19 @@ export interface RouterHandlers extends grpc.UntypedServiceImplementation {
   
   ResetMissionControl: grpc.handleUnaryCall<_routerrpc_ResetMissionControlRequest, _routerrpc_ResetMissionControlResponsePartial>;
   
+  SendPayment: grpc.handleServerStreamingCall<_routerrpc_SendPaymentRequest, _routerrpc_PaymentStatusPartial>;
+  
   SendPaymentV2: grpc.handleServerStreamingCall<_routerrpc_SendPaymentRequest, _lnrpc_PaymentPartial>;
+  
+  SendToRoute: grpc.handleUnaryCall<_routerrpc_SendToRouteRequest, _routerrpc_SendToRouteResponsePartial>;
   
   SendToRouteV2: grpc.handleUnaryCall<_routerrpc_SendToRouteRequest, _lnrpc_HTLCAttemptPartial>;
   
   SetMissionControlConfig: grpc.handleUnaryCall<_routerrpc_SetMissionControlConfigRequest, _routerrpc_SetMissionControlConfigResponsePartial>;
   
   SubscribeHtlcEvents: grpc.handleServerStreamingCall<_routerrpc_SubscribeHtlcEventsRequest, _routerrpc_HtlcEventPartial>;
+  
+  TrackPayment: grpc.handleServerStreamingCall<_routerrpc_TrackPaymentRequest, _routerrpc_PaymentStatusPartial>;
   
   TrackPaymentV2: grpc.handleServerStreamingCall<_routerrpc_TrackPaymentRequest, _lnrpc_PaymentPartial>;
   
@@ -236,17 +250,19 @@ export interface RouterHandlers extends grpc.UntypedServiceImplementation {
 
 export interface RouterDefinition extends grpc.ServiceDefinition {
   BuildRoute: MethodDefinition<_routerrpc_BuildRouteRequestPartial, _routerrpc_BuildRouteResponsePartial, _routerrpc_BuildRouteRequest, _routerrpc_BuildRouteResponse>
-  DeleteForwardingHistory: MethodDefinition<_routerrpc_DeleteForwardingHistoryRequestPartial, _routerrpc_DeleteForwardingHistoryResponsePartial, _routerrpc_DeleteForwardingHistoryRequest, _routerrpc_DeleteForwardingHistoryResponse>
   EstimateRouteFee: MethodDefinition<_routerrpc_RouteFeeRequestPartial, _routerrpc_RouteFeeResponsePartial, _routerrpc_RouteFeeRequest, _routerrpc_RouteFeeResponse>
   GetMissionControlConfig: MethodDefinition<_routerrpc_GetMissionControlConfigRequestPartial, _routerrpc_GetMissionControlConfigResponsePartial, _routerrpc_GetMissionControlConfigRequest, _routerrpc_GetMissionControlConfigResponse>
   HtlcInterceptor: MethodDefinition<_routerrpc_ForwardHtlcInterceptResponsePartial, _routerrpc_ForwardHtlcInterceptRequestPartial, _routerrpc_ForwardHtlcInterceptResponse, _routerrpc_ForwardHtlcInterceptRequest>
   QueryMissionControl: MethodDefinition<_routerrpc_QueryMissionControlRequestPartial, _routerrpc_QueryMissionControlResponsePartial, _routerrpc_QueryMissionControlRequest, _routerrpc_QueryMissionControlResponse>
   QueryProbability: MethodDefinition<_routerrpc_QueryProbabilityRequestPartial, _routerrpc_QueryProbabilityResponsePartial, _routerrpc_QueryProbabilityRequest, _routerrpc_QueryProbabilityResponse>
   ResetMissionControl: MethodDefinition<_routerrpc_ResetMissionControlRequestPartial, _routerrpc_ResetMissionControlResponsePartial, _routerrpc_ResetMissionControlRequest, _routerrpc_ResetMissionControlResponse>
+  SendPayment: MethodDefinition<_routerrpc_SendPaymentRequestPartial, _routerrpc_PaymentStatusPartial, _routerrpc_SendPaymentRequest, _routerrpc_PaymentStatus>
   SendPaymentV2: MethodDefinition<_routerrpc_SendPaymentRequestPartial, _lnrpc_PaymentPartial, _routerrpc_SendPaymentRequest, _lnrpc_Payment>
+  SendToRoute: MethodDefinition<_routerrpc_SendToRouteRequestPartial, _routerrpc_SendToRouteResponsePartial, _routerrpc_SendToRouteRequest, _routerrpc_SendToRouteResponse>
   SendToRouteV2: MethodDefinition<_routerrpc_SendToRouteRequestPartial, _lnrpc_HTLCAttemptPartial, _routerrpc_SendToRouteRequest, _lnrpc_HTLCAttempt>
   SetMissionControlConfig: MethodDefinition<_routerrpc_SetMissionControlConfigRequestPartial, _routerrpc_SetMissionControlConfigResponsePartial, _routerrpc_SetMissionControlConfigRequest, _routerrpc_SetMissionControlConfigResponse>
   SubscribeHtlcEvents: MethodDefinition<_routerrpc_SubscribeHtlcEventsRequestPartial, _routerrpc_HtlcEventPartial, _routerrpc_SubscribeHtlcEventsRequest, _routerrpc_HtlcEvent>
+  TrackPayment: MethodDefinition<_routerrpc_TrackPaymentRequestPartial, _routerrpc_PaymentStatusPartial, _routerrpc_TrackPaymentRequest, _routerrpc_PaymentStatus>
   TrackPaymentV2: MethodDefinition<_routerrpc_TrackPaymentRequestPartial, _lnrpc_PaymentPartial, _routerrpc_TrackPaymentRequest, _lnrpc_Payment>
   TrackPayments: MethodDefinition<_routerrpc_TrackPaymentsRequestPartial, _lnrpc_PaymentPartial, _routerrpc_TrackPaymentsRequest, _lnrpc_Payment>
   UpdateChanStatus: MethodDefinition<_routerrpc_UpdateChanStatusRequestPartial, _routerrpc_UpdateChanStatusResponsePartial, _routerrpc_UpdateChanStatusRequest, _routerrpc_UpdateChanStatusResponse>

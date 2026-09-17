@@ -10,7 +10,6 @@ export interface ListPaymentsRequestPartial {
   'countTotalPayments'?: (boolean);
   'creationDateStart'?: (number | string | Long);
   'creationDateEnd'?: (number | string | Long);
-  'omitHops'?: (boolean);
 }
 
 export interface ListPaymentsRequest {
@@ -21,5 +20,4 @@ export interface ListPaymentsRequest {
   'countTotalPayments': (boolean);
   'creationDateStart': (string);
   'creationDateEnd': (string);
-  'omitHops': (boolean);
 }

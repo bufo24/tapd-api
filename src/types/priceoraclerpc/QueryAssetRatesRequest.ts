@@ -16,7 +16,6 @@ export interface QueryAssetRatesRequestPartial {
   'intent'?: (_priceoraclerpc_IntentPartial);
   'counterpartyId'?: (Buffer | Uint8Array | string);
   'metadata'?: (string);
-  'nodeId'?: (Buffer | Uint8Array | string);
 }
 
 export interface QueryAssetRatesRequest {
@@ -29,5 +28,4 @@ export interface QueryAssetRatesRequest {
   'intent': (_priceoraclerpc_Intent);
   'counterpartyId': (Buffer);
   'metadata': (string);
-  'nodeId': (Buffer);
 }
